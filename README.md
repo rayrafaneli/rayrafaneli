@@ -1,6 +1,6 @@
 🫷 # Bem-vindo ao meu perfil!  🫸
 
-😎 ## Sobre mim
+😎 ## Sobre mim:
 Uma pessoa aficionada por programar, amante da tecnologia, automações e inovações. Sempre em busca de aprender novas habilidades e resolver problemas de maneira criativa e eficiente.
 
 ✨ ## Minhas Habilidades
