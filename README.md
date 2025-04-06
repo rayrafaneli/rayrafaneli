@@ -1,12 +1,22 @@
-🫷 # Bem-vindo ao meu perfil!  🫸
+🫷 Welcome to My Profile! 🫸
 
-😎 ## Sobre mim:
-Uma pessoa aficionada por programar, amante da tecnologia, automações e inovações. Sempre em busca de aprender novas habilidades e resolver problemas de maneira criativa e eficiente.
+😎 About Me
 
-✨ ## Minhas Habilidades
-- **Linguagens de Programação:** Python, Java, SQL
-- **Interesses:** Desenvolvimento de software, automação de processos, inteligência artificial
+A passionate programmer, tech enthusiast, and lover of automation and innovation. Always eager to learn new skills and solve problems in creative and efficient ways.
 
-📂 ## Projetos
-- **loading:** ♾️
+✨ My Skills
+Programming Languages: 🐍 Python, ☕ Java, 🗃️ SQL
 
+Interests: 💻 Software Development, 🤖 Process Automation, 🧠 Artificial Intelligence
+
+✈️ Current Job
+Data Analyst Intern & Developer at Embraer 
+
+🌟 Highlights
+🔍 Problem-solver with a logical mindset
+
+🛠️ Love building tools to simplify workflows
+
+📚 Constantly exploring new tech stacks
+
+[🔗 LinkedIn](https://www.linkedin.com/in/raywa-rafaneli/) | [🐙 GitHub](https://github.com/rayrafaneli)
