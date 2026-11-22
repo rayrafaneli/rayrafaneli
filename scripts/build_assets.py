@@ -8,7 +8,7 @@ from theme import C, DATA, chip, e, logo, svg, text_w, visual_icons
 
 OUT = Path(__file__).resolve().parent.parent / "assets"
 
-PAGES = [("sobre", "Sobre"), ("stack", "Stack"), ("dados", "Dados & BI"), ("rpa", "Automação & RPA"),
+PAGES = [("sobre", "Sobre"), ("stack", "Stack"), ("dados", "Dados & ML"), ("rpa", "Automação & RPA"),
          ("metricas", "Métricas"), ("contato", "Contato")]
 
 LOOP_CSS = """
@@ -87,7 +87,7 @@ def header():
     b.append(f'<text x="{px + 16}" y="166" font-size="11" fill="{m}">Filtros nesta página</text>')
     b.append(f'<rect x="{px + 14}" y="176" width="182" height="146" rx="4" fill="{C["card2"]}"/>'
              f'<text x="{px + 26}" y="198" font-size="12" font-weight="700" fill="{C["text"]}">Foco de atuação</text>')
-    focos = ["Business Intelligence", "Engenharia de dados", "Automação (RPA)", "Desenvolvimento"]
+    focos = ["Engenharia de dados", "Ciência de dados", "Business Intelligence", "Automação (RPA)"]
     for i, f in enumerate(focos):
         y = 214 + i * 24
         b.append(f'<g class="fade" style="animation-delay:{1.6 + i * .15:.2f}s">'
@@ -104,11 +104,11 @@ def header():
     # página do relatório
     b.append(f'<rect x="72" y="92" width="894" height="408" rx="6" fill="{C["page"]}" stroke="#33312F"/>')
     b.append(f'<text x="100" y="132" font-size="11" font-weight="700" fill="{C["yellow"]}" letter-spacing="2.5">'
-             f'RELATÓRIO DE PERFIL · DESENVOLVIMENTO BI</text>')
+             f'RELATÓRIO DE PERFIL · ENGENHARIA &amp; CIÊNCIA DE DADOS</text>')
     b.append(f'<text x="98" y="184" font-size="48" font-weight="800" fill="{C["text"]}" letter-spacing="-.5" class="up">Raywã Rafaneli</text>')
     # subtítulo que alterna entre 3 frases (efeito de digitação com SMIL)
-    frases = ["Desenvolvedor BI · Power BI · DAX · SQL", "Análise de Dados &amp; Automação (RPA)",
-              "Engenharia de dados · ETL · Python"]
+    frases = ["Engenharia de dados · ETL · SQL · Python", "Ciência de dados · estatística · previsão",
+              "Business Intelligence · Power BI · DAX", "Automação · RPA · SAP"]
     seg, tot = 3.6, 3.6 * len(frases)
     kt = f"0;{1.0 / tot:.4f};{3.0 / tot:.4f};{3.4 / tot:.4f};1"
     for i, fr in enumerate(frases):
@@ -122,7 +122,7 @@ def header():
     b.append(f'<text x="100" y="252" font-size="14" fill="{C["muted"]}" class="fade" style="animation-delay:1.2s">'
              f'<tspan fill="{C["yellow"]}">●</tspan> Embraer · Supply Chain · desde abr/2025</text>')
     x = 100
-    for i, t in enumerate(["Power BI", "DAX", "Power Query", "SQL", "Python"]):
+    for i, t in enumerate(["Python", "SQL", "Estatística", "Machine Learning", "Power BI"]):
         first = i == 0
         g, w = chip(x, 270, t, fill="url(#pbi)" if first else None, stroke=C["yellow"] if first else None,
                     color="#201F1E" if first else None, bold=first)
@@ -139,7 +139,7 @@ def header():
     for gy in (base - 40, base - 80, base - 120):
         b.append(f'<path d="M{vx + 16} {gy}H{vx + 290}" stroke="#302F2E" stroke-dasharray="3 4"/>')
     b.append(f'<path d="M{vx + 16} {base}H{vx + 290}" stroke="{C["line2"]}"/>')
-    etapas = ["Extrair", "Tratar", "Modelar", "Visualizar", "Decidir"]
+    etapas = ["Extrair", "Tratar", "Modelar", "Prever", "Decidir"]
     hs = [34, 54, 76, 96, 116]
     pts = []
     for i, (lab, h) in enumerate(zip(etapas, hs)):
@@ -161,8 +161,8 @@ def header():
 
     # cartões de KPI
     cards = [("Embraer", "Dados &amp; Automação", "Supply Chain · desde 2025", C["yellow"]),
-             ("12", "certificações", "Power BI · BI · SQL · Python", DATA[0]),
-             ("10", "nota no TCC", "Machine Learning com XGBoost", DATA[1]),
+             ("12", "certificações", "Power BI avançado · SQL · Python", DATA[0]),
+             ("10", "nota no TCC", "predição com Machine Learning", DATA[1]),
              ("2027", "Ciência da Computação", "bacharelado · UNIP", DATA[2])]
     for i, (big, l1, l2, cor) in enumerate(cards):
         cx = 100 + i * 216
@@ -270,8 +270,8 @@ DAX = [
     [("        VAR ", KW), ("Cargo", VAR), ("    = ", OP), ('"Análise de Dados e Automação"', STR)],
     [("        VAR ", KW), ("Empresa", VAR), ("  = ", OP), ('"Embraer"', STR)],
     [("        VAR ", KW), ("Area", VAR), ("     = ", OP), ('"Supply Chain"', STR)],
-    [("        VAR ", KW), ("Foco", VAR), ("     = ", OP), ('"Business Intelligence"', STR)],
-    [("        VAR ", KW), ("Stack", VAR), ("    = ", OP), ('"Power BI · DAX · SQL · Python"', STR)],
+    [("        VAR ", KW), ("Foco", VAR), ("     = ", OP), ('"Engenharia e Ciência de Dados"', STR)],
+    [("        VAR ", KW), ("Stack", VAR), ("    = ", OP), ('"Python · SQL · Estatística · Power BI"', STR)],
     [("        RETURN", KW)],
     [("            ", OP), ("Cargo", VAR), (' & ', OP), ('" @ "', STR), (" & ", OP), ("Empresa", VAR)],
     [("EVALUATE", KW)],
@@ -313,26 +313,30 @@ def dax():
     b.append('</g>')
     b.append(f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="10" fill="none" stroke="{C["line"]}"/>')
     return svg(W, H, "\n".join(b), "Consulta DAX que descreve o perfil: Análise de Dados e Automação na Embraer, "
-                                  "Supply Chain, foco em Business Intelligence, stack Power BI, DAX, SQL e Python", css=LOOP_CSS)
+                                  "Supply Chain, foco em engenharia e ciência de dados, stack Python, SQL, estatística e Power BI", css=LOOP_CSS)
 
 
 # ------------------------------------------------------------------ matriz de stack
 CTX = {"Trabalho": "#1AAB40", "Projetos": DATA[0], "Estudo": C["yellow"]}
 STACK = [
-    ("BI & Visualização", ["Power BI", "DAX", "Power Query (M)", "Metabase", "Plotly", "Matplotlib", "Seaborn", "Streamlit"],
+    ("Ciência de dados & estatística", ["Estatística inferencial", "Testes de hipótese", "Séries temporais", "SARIMA",
+                                        "Regressão", "Previsão (forecasting)", "Validação walk-forward"], ["Projetos"]),
+    ("Machine Learning & IA", ["XGBoost", "Scikit-learn", "statsmodels", "SciPy", "Visão computacional", "LLMs", "Jupyter"],
+     ["Projetos"]),
+    ("Engenharia de dados & ETL", ["SQL", "Pandas", "NumPy", "Pentaho PDI", "Modelagem dimensional", "APIs de dados",
+                                   "Qualidade de dados"], ["Trabalho", "Projetos"]),
+    ("Bancos de dados", ["Oracle SQL", "PostgreSQL", "MySQL", "SQL Server", "DuckDB", "SQLite"], ["Trabalho", "Projetos"]),
+    ("BI & visualização", ["Power BI (avançado)", "DAX", "Power Query (M)", "Metabase", "Streamlit", "Plotly",
+                           "Matplotlib", "Seaborn"], ["Trabalho", "Projetos"]),
+    ("Automação & RPA", ["SAP ERP", "SAP GUI Scripting", "Python", "VBA", "Outlook (pywin32)", "OCR de PDFs",
+                         "Playwright", "Excel (openpyxl)", "SMTP"], ["Trabalho", "Projetos"]),
+    ("Linguagens", ["Python", "SQL", "Java", "C#", "VB.NET", "VBA", "JavaScript"], ["Trabalho", "Projetos"]),
+    ("Web & .NET", ["HTML5", "CSS3 (Flexbox, Grid)", "SVG", ".NET", "ASP.NET", "FastAPI", "Java (sockets, Maven)"],
      ["Trabalho", "Projetos"]),
-    ("Dados & ETL", ["SQL", "Pandas", "NumPy", "Pentaho PDI", "Modelagem dimensional", "APIs de dados", "Qualidade de dados"],
-     ["Trabalho", "Projetos"]),
-    ("Bancos de dados", ["Oracle", "SQL Server", "DuckDB", "SQLite", "Supabase (Postgres)"], ["Trabalho", "Projetos"]),
-    ("Automação & RPA", ["Python", "VBA", "SAP GUI Scripting", "Playwright", "Excel (openpyxl)", "SMTP", "Android (Java)"],
-     ["Trabalho", "Projetos"]),
-    ("Bots & integrações", ["Telegram Bot API", "Telethon", "WhatsApp", "YouTube Data API", "APIs REST"], ["Projetos"]),
-    ("Linguagens", ["Python", "SQL", "Java", "C#", "VB.NET", "VBA", "HTML/CSS"], ["Trabalho", "Projetos"]),
-    ("Desenvolvimento", ["ASP.NET", "FastAPI", "Java (sockets, Maven)", "Testes com pytest"], ["Trabalho", "Projetos"]),
-    ("Cloud & DevOps", ["Docker", "AWS", "Git", "GitHub Actions", "CI/CD"], ["Projetos"]),
-    ("IA & Machine Learning", ["XGBoost", "Scikit-learn", "Visão computacional", "LLMs", "Jupyter"], ["Projetos"]),
+    ("Cloud, DevOps & testes", ["Docker", "AWS", "Git", "GitHub Actions", "CI/CD", "pytest"], ["Projetos"]),
+    ("Bots & integrações", ["Telegram Bot API", "YouTube Data API", "APIs REST"], ["Projetos"]),
     ("Governança & processos", ["Governança de dados", "LGPD", "Lean", "Supply Chain"], ["Trabalho"]),
-    ("Estudando agora", ["Azure SQL", "Apache Spark"], ["Estudo"]),
+    ("Cursos & estudando", ["SAP S/4HANA", "Azure SQL", "Apache Spark"], ["Estudo"]),
 ]
 
 
@@ -414,11 +418,46 @@ def rodape():
     return svg(W, H, "\n".join(b), "Obrigado pela visita!", css=LOOP_CSS, defs=defs)
 
 
+def fluxo_rpa():
+    """Fluxo típico das automações corporativas, com dados correndo pelas setas."""
+    W, H = 1200, 250
+    etapas = [("E-mail & PDFs", "Outlook · OCR", DATA[0]), ("Python", "regras de negócio", C["yellow"]),
+              ("SAP ERP", "GUI Scripting", DATA[1]), ("Oracle SQL", "consulta e cruzamento", DATA[2]),
+              ("Excel", "relatórios", "#1AAB40"), ("Painel & e-mail", "HTML · CSS · JS", DATA[3])]
+    b = [f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="10" fill="{C["page"]}" stroke="{C["line"]}"/>',
+         f'<text x="28" y="38" font-size="16" font-weight="700" fill="{C["text"]}">Como meus robôs corporativos trabalham</text>',
+         f'<text x="28" y="58" font-size="12" fill="{C["muted"]}">fluxo típico das automações em produção · Python e VBA</text>',
+         visual_icons(1100, 28)]
+    n, w, h, y = len(etapas), 160, 96, 104
+    gap = (W - 56 - n * w) / (n - 1)
+    xs = [28 + i * (w + gap) for i in range(n)]
+    for i in range(n - 1):
+        x1, x2 = xs[i] + w, xs[i + 1]
+        b.append(f'<path d="M{x1 + 4} {y + h / 2}H{x2 - 8}" stroke="{C["line2"]}" stroke-width="2"/>'
+                 f'<path d="M{x1 + 4} {y + h / 2}H{x2 - 8}" stroke="{C["yellow"]}" stroke-width="2.5" '
+                 f'stroke-dasharray="6 10" class="flow"/>'
+                 f'<path d="M{x2 - 10} {y + h / 2 - 5}l6 5-6 5" stroke="{C["yellow"]}" stroke-width="2" fill="none"/>')
+    for i, (titulo, sub, cor) in enumerate(etapas):
+        x = xs[i]
+        b.append(f'<g class="up" style="animation-delay:{.15 + i * .15:.2f}s">'
+                 f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="8" fill="{C["chrome"]}" stroke="{C["line"]}"/>'
+                 f'<rect x="{x}" y="{y}" width="{w}" height="3" rx="1.5" fill="{cor}"/>'
+                 f'<circle cx="{x + 22}" cy="{y + 32}" r="7" fill="{cor}" class="breath" style="animation-delay:{i * .5:.1f}s"/>'
+                 f'<text x="{x + 38}" y="{y + 37}" font-size="14.5" font-weight="700" fill="{C["text"]}">{e(titulo)}</text>'
+                 f'<text x="{x + 16}" y="{y + 70}" font-size="12" fill="{C["muted"]}">{e(sub)}</text></g>')
+    b.append(f'<text x="28" y="{H - 22}" font-size="12" fill="{C["muted"]}">Exemplos: consultas e atualizações em transações '
+             f'do SAP, leitura de grids, extração de dados de documentos e e-mails automáticos com o status.</text>')
+    css = LOOP_CSS + ".flow{animation:flow 1.1s linear infinite;}@keyframes flow{to{stroke-dashoffset:-32}}"
+    return svg(W, H, "\n".join(b), "Fluxo das automações: e-mail e PDFs, Python, SAP ERP, Oracle SQL, Excel e painel/e-mail",
+               css=css)
+
+
 def main():
-    files = {"header.svg": header(), "dax.svg": dax(), "stack.svg": stack(), "footer.svg": rodape()}
-    subs = {"sobre": "quem sou", "stack": "ferramentas", "dados": "projetos de dados", "rpa": "robôs e automações",
+    files = {"header.svg": header(), "dax.svg": dax(), "stack.svg": stack(), "footer.svg": rodape(),
+             "fluxo-rpa.svg": fluxo_rpa()}
+    subs = {"sobre": "quem sou", "stack": "ferramentas", "dados": "engenharia, estatística e ml", "rpa": "robôs e automações",
             "metricas": "github", "contato": "vamos conversar"}
-    titulos = {"sobre": "Sobre mim", "stack": "Stack & competências", "dados": "Projetos de dados & BI",
+    titulos = {"sobre": "Sobre mim", "stack": "Stack & competências", "dados": "Engenharia & ciência de dados",
                "rpa": "Automação & RPA", "metricas": "Métricas do GitHub", "contato": "Contato"}
     for i, (slug, nome) in enumerate(PAGES, 1):
         files[f"tabs/{slug}.svg"] = tab(i, nome)
