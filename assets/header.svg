@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-label="Relatório de perfil no estilo Power BI: Raywã Rafaneli, Desenvolvedor BI, Análise de Dados e Automação na Embraer">
+<title>Relatório de perfil no estilo Power BI: Raywã Rafaneli, Desenvolvedor BI, Análise de Dados e Automação na Embraer</title>
+<defs>
+  <linearGradient id="pbi" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#F2C811"/><stop offset="1" stop-color="#E8A317"/>
+  </linearGradient>
+  <linearGradient id="barg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#F2C811"/><stop offset="1" stop-color="#C67A0A"/>
+  </linearGradient>
+<style>
+  text{font-family:'Segoe UI','Segoe UI Variable',system-ui,-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;}
+  .mono{font-family:'Cascadia Code','Cascadia Mono',Consolas,'SFMono-Regular',Menlo,monospace;}
+  .bar{transform-box:fill-box;transform-origin:50% 100%;animation:grow 1.1s cubic-bezier(.2,.8,.2,1) both;}
+  @keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+  .up{animation:up .7s ease-out both;}
+  @keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  .fade{animation:fade .6s ease-out both;}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .draw{stroke-dasharray:900;stroke-dashoffset:900;animation:draw 1.8s ease-out 1.1s forwards;}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  .pulse{animation:pulse 2s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .sweep{animation:sweep 4.5s ease-in-out infinite;}
+  @keyframes sweep{0%{transform:translateX(-300px)}100%{transform:translateX(1500px)}}
+</style>
+</defs>
+<clipPath id="win"><rect width="1200" height="560" rx="12"/></clipPath>
+<g clip-path="url(#win)">
+<rect width="1200" height="560" fill="#161514"/>
+<rect width="1200" height="72" fill="#252423"/>
+<rect x="18.0" y="22.0" width="5.0" height="8.0" rx="1.4" fill="url(#pbi)"/><rect x="25.0" y="17.0" width="5.0" height="13.0" rx="1.4" fill="url(#pbi)"/><rect x="32.0" y="12.0" width="5.0" height="18.0" rx="1.4" fill="url(#pbi)"/>
+<text x="48" y="26" font-size="13" fill="#F3F2F1" font-weight="600">rayrafaneli.pbix<tspan fill="#A19F9D" font-weight="400"> — Relatório de perfil</tspan></text>
+<rect x="470" y="8" width="260" height="24" rx="4" fill="#161514" stroke="#3B3A39"/><circle cx="486" cy="19" r="4.5" fill="none" stroke="#A19F9D" stroke-width="1.4"/><path d="M489.5 22.5l3.5 3.5" stroke="#A19F9D" stroke-width="1.4" stroke-linecap="round"/><text x="500" y="24.5" font-size="12" fill="#7A7876">Pesquisar</text>
+<g stroke="#A19F9D" stroke-width="1.3" fill="none"><path d="M1084 20h11"/><rect x="1124" y="14" width="11" height="11"/><path d="M1164 14l11 11M1175 14l-11 11"/></g>
+<text x="20" y="60" font-size="12.5" fill="#A19F9D">Arquivo</text>
+<text x="84" y="60" font-size="12.5" fill="#F3F2F1" font-weight="600">Página Inicial</text>
+<text x="190" y="60" font-size="12.5" fill="#A19F9D">Inserir</text>
+<text x="250" y="60" font-size="12.5" fill="#A19F9D">Modelagem</text>
+<text x="338" y="60" font-size="12.5" fill="#A19F9D">Exibir</text>
+<text x="394" y="60" font-size="12.5" fill="#A19F9D">Otimizar</text>
+<text x="466" y="60" font-size="12.5" fill="#A19F9D">Ajuda</text>
+<rect x="84" y="67" width="85" height="3" rx="1.5" fill="#F2C811"/>
+<rect x="1078" y="45" width="104" height="22" rx="4" fill="url(#pbi)"/><path d="M1093 61v-8m-3.5 3.5L1093 53l3.5 3.5M1088 63h10" stroke="#201F1E" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="1106" y="60.5" font-size="12" font-weight="700" fill="#201F1E">Publicar</text>
+<rect y="72" width="1200" height="1" fill="#3B3A39"/>
+<rect y="73" width="48" height="447" fill="#252423"/><rect x="48" y="73" width="1" height="447" fill="#3B3A39"/>
+<rect x="0" y="86" width="48" height="34" fill="#2D2C2B"/><rect x="0" y="86" width="3" height="34" fill="#F2C811"/>
+<g fill="#F3F2F1"><rect x="15" y="105" width="4" height="8"/><rect x="22" y="99" width="4" height="14"/><rect x="29" y="94" width="4" height="19"/></g>
+<g fill="none" stroke="#A19F9D" stroke-width="1.4"><rect x="15" y="134" width="18" height="16"/><path d="M15 140h18M15 145h18M21 134v16"/><rect x="14" y="173" width="7" height="6"/><rect x="27" y="173" width="7" height="6"/><rect x="20" y="186" width="7" height="6"/><path d="M21 176h6M24 179v7"/></g>
+<text x="24" y="232" font-size="12" font-weight="700" fill="#A19F9D" text-anchor="middle" class="mono">DAX</text>
+<rect x="990" y="73" width="210" height="447" fill="#252423"/><rect x="990" y="73" width="1" height="447" fill="#3B3A39"/>
+<text x="1006" y="100" font-size="14" font-weight="700" fill="#F3F2F1">Filtros</text><path d="M1170 92l5 5-5 5M1176 92l5 5-5 5" stroke="#A19F9D" stroke-width="1.3" fill="none"/>
+<rect x="1004" y="114" width="182" height="26" rx="4" fill="#161514" stroke="#4A4846"/><circle cx="1018" cy="126" r="4.5" fill="none" stroke="#A19F9D" stroke-width="1.3"/><path d="M1021.5 129.5l3.5 3.5" stroke="#A19F9D" stroke-width="1.3" stroke-linecap="round"/><text x="1032" y="131" font-size="11.5" fill="#7A7876">Pesquisar</text>
+<text x="1006" y="166" font-size="11" fill="#A19F9D">Filtros nesta página</text>
+<rect x="1004" y="176" width="182" height="146" rx="4" fill="#2D2C2B"/><text x="1016" y="198" font-size="12" font-weight="700" fill="#F3F2F1">Foco de atuação</text>
+<g class="fade" style="animation-delay:1.60s"><rect x="1016" y="214" width="13" height="13" rx="2.5" fill="#F2C811"/><path d="M1019 220.8l2.6 2.6 4.6-5.2" stroke="#201F1E" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="1036" y="225" font-size="11.5" fill="#D2D0CE">Business Intelligence</text></g>
+<g class="fade" style="animation-delay:1.75s"><rect x="1016" y="238" width="13" height="13" rx="2.5" fill="#F2C811"/><path d="M1019 244.8l2.6 2.6 4.6-5.2" stroke="#201F1E" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="1036" y="249" font-size="11.5" fill="#D2D0CE">Engenharia de dados</text></g>
+<g class="fade" style="animation-delay:1.90s"><rect x="1016" y="262" width="13" height="13" rx="2.5" fill="#F2C811"/><path d="M1019 268.8l2.6 2.6 4.6-5.2" stroke="#201F1E" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="1036" y="273" font-size="11.5" fill="#D2D0CE">Automação (RPA)</text></g>
+<g class="fade" style="animation-delay:2.05s"><rect x="1016" y="286" width="13" height="13" rx="2.5" fill="#F2C811"/><path d="M1019 292.8l2.6 2.6 4.6-5.2" stroke="#201F1E" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="1036" y="297" font-size="11.5" fill="#D2D0CE">Desenvolvimento</text></g>
+<rect x="1004" y="334" width="182" height="64" rx="4" fill="#2D2C2B"/><text x="1016" y="358" font-size="12" font-weight="700" fill="#F3F2F1">Local</text><text x="1016" y="380" font-size="11.5" fill="#A19F9D">Jacareí · SP · Brasil</text>
+<rect x="1004" y="410" width="182" height="64" rx="4" fill="#2D2C2B"/><text x="1016" y="434" font-size="12" font-weight="700" fill="#F3F2F1">Idiomas</text><text x="1016" y="456" font-size="11.5" fill="#A19F9D">Português · Inglês avançado</text>
+<rect x="72" y="92" width="894" height="408" rx="6" fill="#1F1E1D" stroke="#33312F"/>
+<text x="100" y="132" font-size="11" font-weight="700" fill="#F2C811" letter-spacing="2.5">RELATÓRIO DE PERFIL · DESENVOLVIMENTO BI</text>
+<text x="98" y="184" font-size="48" font-weight="800" fill="#F3F2F1" letter-spacing="-.5" class="up">Raywã Rafaneli</text>
+<clipPath id="type"><rect x="96" y="198" width="0" height="34"><animate attributeName="width" from="0" to="540" dur="2.4s" begin=".5s" fill="freeze"/></rect></clipPath>
+<text x="100" y="222" font-size="19" fill="#D2D0CE" clip-path="url(#type)">Desenvolvedor BI · Análise de Dados &amp; Automação</text>
+<text x="100" y="252" font-size="14" fill="#A19F9D" class="fade" style="animation-delay:1.2s"><tspan fill="#F2C811">●</tspan> Embraer · Supply Chain · desde abr/2025</text>
+<g class="up" style="animation-delay:1.30s"><rect x="100.0" y="270" width="84.3" height="26" rx="13.0" fill="url(#pbi)" stroke="#F2C811"/><text x="142.2" y="287.5" font-size="12.5" fill="#201F1E" text-anchor="middle" font-weight="600">Power BI</text></g>
+<g class="up" style="animation-delay:1.42s"><rect x="192.3" y="270" width="50.0" height="26" rx="13.0" fill="#2D2C2B" stroke="#4A4846"/><text x="217.3" y="287.5" font-size="12.5" fill="#F3F2F1" text-anchor="middle">DAX</text></g>
+<g class="up" style="animation-delay:1.54s"><rect x="250.3" y="270" width="101.6" height="26" rx="13.0" fill="#2D2C2B" stroke="#4A4846"/><text x="301.1" y="287.5" font-size="12.5" fill="#F3F2F1" text-anchor="middle">Power Query</text></g>
+<g class="up" style="animation-delay:1.66s"><rect x="359.9" y="270" width="50.0" height="26" rx="13.0" fill="#2D2C2B" stroke="#4A4846"/><text x="384.9" y="287.5" font-size="12.5" fill="#F3F2F1" text-anchor="middle">SQL</text></g>
+<g class="up" style="animation-delay:1.78s"><rect x="417.9" y="270" width="66.2" height="26" rx="13.0" fill="#2D2C2B" stroke="#4A4846"/><text x="451.1" y="287.5" font-size="12.5" fill="#F3F2F1" text-anchor="middle">Python</text></g>
+<rect x="640" y="112" width="306" height="194" rx="6" fill="#252423" stroke="#3B3A39"/>
+<text x="656" y="137" font-size="13" font-weight="700" fill="#F3F2F1">Do dado à decisão</text><text x="656" y="154" font-size="10.5" fill="#A19F9D">etapas do meu trabalho</text>
+<g fill="none" stroke="#7A7876" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M860 126h12l-4.5 5.5v4.5l-3-1.5v-3z"/><path d="M886 130v-4h4M898 126h4v4M902 134v4h-4M890 138h-4v-4"/></g><g fill="#7A7876"><circle cx="916" cy="132" r="1.5"/><circle cx="922" cy="132" r="1.5"/><circle cx="928" cy="132" r="1.5"/></g>
+<path d="M656 232H930" stroke="#302F2E" stroke-dasharray="3 4"/>
+<path d="M656 192H930" stroke="#302F2E" stroke-dasharray="3 4"/>
+<path d="M656 152H930" stroke="#302F2E" stroke-dasharray="3 4"/>
+<path d="M656 272H930" stroke="#4A4846"/>
+<rect class="bar" style="animation-delay:0.60s" x="670" y="238" width="32" height="34" rx="2" fill="url(#barg)"/>
+<text x="686" y="288" font-size="9.5" fill="#A19F9D" text-anchor="middle">Extrair</text>
+<rect class="bar" style="animation-delay:0.72s" x="724" y="218" width="32" height="54" rx="2" fill="url(#barg)"/>
+<text x="740" y="288" font-size="9.5" fill="#A19F9D" text-anchor="middle">Tratar</text>
+<rect class="bar" style="animation-delay:0.84s" x="778" y="196" width="32" height="76" rx="2" fill="url(#barg)"/>
+<text x="794" y="288" font-size="9.5" fill="#A19F9D" text-anchor="middle">Modelar</text>
+<rect class="bar" style="animation-delay:0.96s" x="832" y="176" width="32" height="96" rx="2" fill="url(#barg)"/>
+<text x="848" y="288" font-size="9.5" fill="#A19F9D" text-anchor="middle">Visualizar</text>
+<rect class="bar" style="animation-delay:1.08s" x="886" y="156" width="32" height="116" rx="2" fill="url(#barg)"/>
+<text x="902" y="288" font-size="9.5" fill="#A19F9D" text-anchor="middle">Decidir</text>
+<polyline class="draw" points="686,226 740,206 794,184 848,164 902,144" fill="none" stroke="#118DFF" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="fade" style="animation-delay:1.60s" cx="686" cy="226" r="3.6" fill="#1F1E1D" stroke="#118DFF" stroke-width="2"/>
+<circle class="fade" style="animation-delay:1.80s" cx="740" cy="206" r="3.6" fill="#1F1E1D" stroke="#118DFF" stroke-width="2"/>
+<circle class="fade" style="animation-delay:2.00s" cx="794" cy="184" r="3.6" fill="#1F1E1D" stroke="#118DFF" stroke-width="2"/>
+<circle class="fade" style="animation-delay:2.20s" cx="848" cy="164" r="3.6" fill="#1F1E1D" stroke="#118DFF" stroke-width="2"/>
+<circle class="fade" style="animation-delay:2.40s" cx="902" cy="144" r="3.6" fill="#1F1E1D" stroke="#118DFF" stroke-width="2"/>
+<g class="up" style="animation-delay:0.90s"><rect x="100" y="330" width="198" height="150" rx="6" fill="#252423" stroke="#3B3A39"/><rect x="100" y="330" width="198" height="3" rx="1.5" fill="#F2C811"/><text x="120" y="392" font-size="36" font-weight="800" fill="#F3F2F1">Embraer</text><text x="120" y="426" font-size="13" font-weight="600" fill="#D2D0CE">Dados &amp; Automação</text><text x="120" y="448" font-size="11.5" fill="#A19F9D">Supply Chain · desde 2025</text></g>
+<g class="up" style="animation-delay:1.05s"><rect x="316" y="330" width="198" height="150" rx="6" fill="#252423" stroke="#3B3A39"/><rect x="316" y="330" width="198" height="3" rx="1.5" fill="#118DFF"/><text x="336" y="392" font-size="36" font-weight="800" fill="#F3F2F1">12</text><text x="336" y="426" font-size="13" font-weight="600" fill="#D2D0CE">certificações</text><text x="336" y="448" font-size="11.5" fill="#A19F9D">Power BI · BI · SQL · Python</text></g>
+<g class="up" style="animation-delay:1.20s"><rect x="532" y="330" width="198" height="150" rx="6" fill="#252423" stroke="#3B3A39"/><rect x="532" y="330" width="198" height="3" rx="1.5" fill="#E66C37"/><text x="552" y="392" font-size="36" font-weight="800" fill="#F3F2F1">10</text><text x="552" y="426" font-size="13" font-weight="600" fill="#D2D0CE">nota no TCC</text><text x="552" y="448" font-size="11.5" fill="#A19F9D">Machine Learning com XGBoost</text></g>
+<g class="up" style="animation-delay:1.35s"><rect x="748" y="330" width="198" height="150" rx="6" fill="#252423" stroke="#3B3A39"/><rect x="748" y="330" width="198" height="3" rx="1.5" fill="#744EC2"/><text x="768" y="392" font-size="36" font-weight="800" fill="#F3F2F1">2027</text><text x="768" y="426" font-size="13" font-weight="600" fill="#D2D0CE">Ciência da Computação</text><text x="768" y="448" font-size="11.5" fill="#A19F9D">bacharelado · UNIP</text></g>
+<rect y="520" width="1200" height="40" fill="#252423"/><rect y="520" width="1200" height="1" fill="#3B3A39"/>
+<rect x="60" y="525" width="65" height="30" rx="4" fill="#2D2C2B"/><rect x="70" y="551" width="45" height="2.5" rx="1.2" fill="#F2C811"/>
+<text x="93" y="545" font-size="12.5" text-anchor="middle" fill="#F3F2F1" font-weight="600">Sobre</text>
+<text x="164" y="545" font-size="12.5" text-anchor="middle" fill="#A19F9D">Stack</text>
+<text x="244" y="545" font-size="12.5" text-anchor="middle" fill="#A19F9D">Projetos</text>
+<text x="334" y="545" font-size="12.5" text-anchor="middle" fill="#A19F9D">Métricas</text>
+<text x="421" y="545" font-size="12.5" text-anchor="middle" fill="#A19F9D">Contato</text>
+<text x="474" y="546" font-size="17" fill="#A19F9D">+</text>
+<text x="880" y="545" font-size="11.5" fill="#A19F9D">Página 1 de 5</text>
+<path d="M990 540h8" stroke="#A19F9D" stroke-width="1.4"/><rect x="1008" y="539" width="100" height="2" rx="1" fill="#4A4846"/><circle cx="1058" cy="540" r="5" fill="#F3F2F1"/><path d="M1118 540h8M1122 536v8" stroke="#A19F9D" stroke-width="1.4"/><text x="1140" y="545" font-size="11.5" fill="#A19F9D">100%</text>
+</g>
+<rect x=".5" y=".5" width="1199" height="559" rx="12" fill="none" stroke="#3B3A39"/>
+</svg>

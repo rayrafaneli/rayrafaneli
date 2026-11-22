@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-label="Dashboard corporativo de Supply Chain desfocado, com o aviso: conteúdo confidencial">
+<title>Dashboard corporativo de Supply Chain desfocado, com o aviso: conteúdo confidencial</title>
+<defs>
+  <linearGradient id="pbi" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#F2C811"/><stop offset="1" stop-color="#E8A317"/>
+  </linearGradient>
+  <linearGradient id="barg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#F2C811"/><stop offset="1" stop-color="#C67A0A"/>
+  </linearGradient><filter id="blur" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="5"/></filter><linearGradient id="shine" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<style>
+  text{font-family:'Segoe UI','Segoe UI Variable',system-ui,-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;}
+  .mono{font-family:'Cascadia Code','Cascadia Mono',Consolas,'SFMono-Regular',Menlo,monospace;}
+  .bar{transform-box:fill-box;transform-origin:50% 100%;animation:grow 1.1s cubic-bezier(.2,.8,.2,1) both;}
+  @keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+  .up{animation:up .7s ease-out both;}
+  @keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  .fade{animation:fade .6s ease-out both;}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .draw{stroke-dasharray:900;stroke-dashoffset:900;animation:draw 1.8s ease-out 1.1s forwards;}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  .pulse{animation:pulse 2s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .sweep{animation:sweep 4.5s ease-in-out infinite;}
+  @keyframes sweep{0%{transform:translateX(-300px)}100%{transform:translateX(1500px)}}
+</style>
+</defs>
+<clipPath id="c"><rect width="1200" height="540" rx="12"/></clipPath><g clip-path="url(#c)">
+<rect width="1200" height="540" fill="#161514"/>
+<rect width="1200" height="40" fill="#252423"/>
+<rect x="18.0" y="22.0" width="5.0" height="8.0" rx="1.4" fill="url(#pbi)"/><rect x="25.0" y="17.0" width="5.0" height="13.0" rx="1.4" fill="url(#pbi)"/><rect x="32.0" y="12.0" width="5.0" height="18.0" rx="1.4" fill="url(#pbi)"/>
+<text x="48" y="26" font-size="13" font-weight="600" fill="#F3F2F1">painel-corporativo.pbix<tspan fill="#A19F9D" font-weight="400"> — Supply Chain · Embraer</tspan></text>
+<rect x="1046" y="10" width="138" height="21" rx="10.5" fill="#3A1E1E" stroke="#D64550"/><text x="1115" y="25" font-size="11" font-weight="700" fill="#F28B8B" text-anchor="middle" letter-spacing="1">CONFIDENCIAL</text>
+<g filter="url(#blur)">
+<rect x="28" y="62" width="274" height="96" rx="6" fill="#252423"/><rect x="46" y="84" width="110" height="10" rx="5" fill="#3E3C3A"/><rect x="46" y="106" width="150" height="26" rx="6" fill="#F2C811" opacity=".55"/>
+<rect x="318" y="62" width="274" height="96" rx="6" fill="#252423"/><rect x="336" y="84" width="110" height="10" rx="5" fill="#3E3C3A"/><rect x="336" y="106" width="132" height="26" rx="6" fill="#118DFF" opacity=".55"/>
+<rect x="608" y="62" width="274" height="96" rx="6" fill="#252423"/><rect x="626" y="84" width="110" height="10" rx="5" fill="#3E3C3A"/><rect x="626" y="106" width="114" height="26" rx="6" fill="#E66C37" opacity=".55"/>
+<rect x="898" y="62" width="274" height="96" rx="6" fill="#252423"/><rect x="916" y="84" width="110" height="10" rx="5" fill="#3E3C3A"/><rect x="916" y="106" width="96" height="26" rx="6" fill="#744EC2" opacity=".55"/>
+<rect x="28" y="176" width="710" height="336" rx="6" fill="#252423"/>
+<rect x="60" y="368" width="34" height="120" rx="3" fill="url(#barg)" opacity=".7"/>
+<rect x="116" y="308" width="34" height="180" rx="3" fill="url(#barg)" opacity=".7"/>
+<rect x="172" y="338" width="34" height="150" rx="3" fill="url(#barg)" opacity=".7"/>
+<rect x="228" y="278" width="34" height="210" rx="3" fill="url(#barg)" opacity=".7"/>
+<rect x="284" y="318" width="34" height="170" rx="3" fill="url(#barg)" opacity=".7"/>
+<rect x="340" y="248" width="34" height="240" rx="3" fill="url(#barg)" opacity=".7"/>
+<rect x="396" y="288" width="34" height="200" rx="3" fill="url(#barg)" opacity=".7"/>
+<rect x="452" y="228" width="34" height="260" rx="3" fill="url(#barg)" opacity=".7"/>
+<rect x="508" y="298" width="34" height="190" rx="3" fill="url(#barg)" opacity=".7"/>
+<rect x="564" y="258" width="34" height="230" rx="3" fill="url(#barg)" opacity=".7"/>
+<rect x="620" y="208" width="34" height="280" rx="3" fill="url(#barg)" opacity=".7"/>
+<rect x="676" y="238" width="34" height="250" rx="3" fill="url(#barg)" opacity=".7"/>
+<polyline points="77,362 133,308 189,335 245,281 301,317 357,254 413,290 469,236 525,299 581,263 637,218 693,245" fill="none" stroke="#118DFF" stroke-width="4"/>
+<rect x="756" y="176" width="416" height="336" rx="6" fill="#252423"/>
+<rect x="776" y="206" width="120" height="12" rx="6" fill="#3E3C3A"/><rect x="916" y="206" width="70" height="12" rx="6" fill="#118DFF" opacity=".6"/>
+<rect x="776" y="242" width="120" height="12" rx="6" fill="#3E3C3A"/><rect x="916" y="242" width="107" height="12" rx="6" fill="#E66C37" opacity=".6"/>
+<rect x="776" y="278" width="120" height="12" rx="6" fill="#3E3C3A"/><rect x="916" y="278" width="144" height="12" rx="6" fill="#744EC2" opacity=".6"/>
+<rect x="776" y="314" width="120" height="12" rx="6" fill="#3E3C3A"/><rect x="916" y="314" width="181" height="12" rx="6" fill="#E044A7" opacity=".6"/>
+<rect x="776" y="350" width="120" height="12" rx="6" fill="#3E3C3A"/><rect x="916" y="350" width="218" height="12" rx="6" fill="#118DFF" opacity=".6"/>
+<rect x="776" y="386" width="120" height="12" rx="6" fill="#3E3C3A"/><rect x="916" y="386" width="95" height="12" rx="6" fill="#E66C37" opacity=".6"/>
+<rect x="776" y="422" width="120" height="12" rx="6" fill="#3E3C3A"/><rect x="916" y="422" width="132" height="12" rx="6" fill="#744EC2" opacity=".6"/>
+<rect x="776" y="458" width="120" height="12" rx="6" fill="#3E3C3A"/><rect x="916" y="458" width="169" height="12" rx="6" fill="#E044A7" opacity=".6"/>
+</g>
+<rect class="sweep" x="0" y="0" width="240" height="540" fill="url(#shine)" opacity=".06"/>
+<g class="up" style="animation-delay:.3s"><rect x="330" y="186" width="540" height="190" rx="12" fill="#161514" fill-opacity=".93" stroke="#F2C811" stroke-opacity=".55"/><rect x="586" y="226" width="28" height="22" rx="4" fill="url(#pbi)"/><path d="M591 226v-6a9 9 0 0 1 18 0v6" fill="none" stroke="#F2C811" stroke-width="3.2"/><circle cx="600" cy="236" r="3" fill="#201F1E"/><text x="600" y="286" font-size="24" font-weight="800" fill="#F3F2F1" text-anchor="middle">Conteúdo confidencial</text><text x="600" y="316" font-size="14.5" fill="#D2D0CE" text-anchor="middle">Dashboards de Supply Chain em Power BI e Metabase</text><text x="600" y="344" font-size="13" fill="#A19F9D" text-anchor="middle">Telas e dados ficam fora do GitHub por compliance.</text></g>
+</g>
+<rect x=".5" y=".5" width="1199" height="539" rx="12" fill="none" stroke="#3B3A39"/>
+</svg>

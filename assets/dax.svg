@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="420" viewBox="0 0 600 420" role="img" aria-label="Consulta DAX que descreve o perfil: Análise de Dados e Automação na Embraer, Supply Chain, foco em Business Intelligence, stack Power BI, DAX, SQL e Python">
+<title>Consulta DAX que descreve o perfil: Análise de Dados e Automação na Embraer, Supply Chain, foco em Business Intelligence, stack Power BI, DAX, SQL e Python</title>
+<defs>
+  <linearGradient id="pbi" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#F2C811"/><stop offset="1" stop-color="#E8A317"/>
+  </linearGradient>
+  <linearGradient id="barg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#F2C811"/><stop offset="1" stop-color="#C67A0A"/>
+  </linearGradient>
+<style>
+  text{font-family:'Segoe UI','Segoe UI Variable',system-ui,-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;}
+  .mono{font-family:'Cascadia Code','Cascadia Mono',Consolas,'SFMono-Regular',Menlo,monospace;}
+  .bar{transform-box:fill-box;transform-origin:50% 100%;animation:grow 1.1s cubic-bezier(.2,.8,.2,1) both;}
+  @keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+  .up{animation:up .7s ease-out both;}
+  @keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  .fade{animation:fade .6s ease-out both;}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .draw{stroke-dasharray:900;stroke-dashoffset:900;animation:draw 1.8s ease-out 1.1s forwards;}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  .pulse{animation:pulse 2s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .sweep{animation:sweep 4.5s ease-in-out infinite;}
+  @keyframes sweep{0%{transform:translateX(-300px)}100%{transform:translateX(1500px)}}
+</style>
+</defs>
+<clipPath id="c"><rect width="600" height="420" rx="10"/></clipPath><g clip-path="url(#c)">
+<rect width="600" height="420" fill="#1E1E1E"/>
+<rect width="600" height="40" fill="#252423"/>
+<rect x="16.0" y="21.1" width="4.5" height="7.2" rx="1.3" fill="url(#pbi)"/><rect x="22.3" y="16.6" width="4.5" height="11.7" rx="1.3" fill="url(#pbi)"/><rect x="28.6" y="12.1" width="4.5" height="16.2" rx="1.3" fill="url(#pbi)"/>
+<text x="44" y="25" font-size="12.5" fill="#A19F9D">Exibição de consulta DAX</text>
+<rect x="196" y="8" width="96" height="32" rx="4" fill="#1E1E1E"/><rect x="196" y="8" width="96" height="2.5" fill="#F2C811"/><text x="244" y="29" font-size="12" fill="#F3F2F1" text-anchor="middle">perfil.dax</text>
+<rect x="494" y="9" width="90" height="23" rx="4" fill="none" stroke="#F2C811"/><path d="M507 15v11l9-5.5z" fill="#F2C811"/><text x="524" y="25" font-size="12" font-weight="600" fill="#F2C811">Executar</text>
+<g class="fade" style="animation-delay:0.30s"><text x="38" y="70" font-size="12.5" fill="#6E7681" text-anchor="end" class="mono">1</text><text x="54" y="70" font-size="13" class="mono" xml:space="preserve"><tspan fill="#6A9955">-- quem sou eu, em uma medida</tspan></text></g>
+<g class="fade" style="animation-delay:0.46s"><text x="38" y="91" font-size="12.5" fill="#6E7681" text-anchor="end" class="mono">2</text><text x="54" y="91" font-size="13" class="mono" xml:space="preserve"><tspan fill="#569CD6">DEFINE</tspan></text></g>
+<g class="fade" style="animation-delay:0.62s"><text x="38" y="112" font-size="12.5" fill="#6E7681" text-anchor="end" class="mono">3</text><text x="54" y="112" font-size="13" class="mono" xml:space="preserve"><tspan fill="#569CD6">    MEASURE </tspan><tspan fill="#4EC9B0">Perfil</tspan><tspan fill="#9CDCFE">[Raywã]</tspan><tspan fill="#D4D4D4"> =</tspan></text></g>
+<g class="fade" style="animation-delay:0.78s"><text x="38" y="133" font-size="12.5" fill="#6E7681" text-anchor="end" class="mono">4</text><text x="54" y="133" font-size="13" class="mono" xml:space="preserve"><tspan fill="#569CD6">        VAR </tspan><tspan fill="#DCDCAA">Cargo</tspan><tspan fill="#D4D4D4">    = </tspan><tspan fill="#CE9178">&quot;Análise de Dados e Automação&quot;</tspan></text></g>
+<g class="fade" style="animation-delay:0.94s"><text x="38" y="154" font-size="12.5" fill="#6E7681" text-anchor="end" class="mono">5</text><text x="54" y="154" font-size="13" class="mono" xml:space="preserve"><tspan fill="#569CD6">        VAR </tspan><tspan fill="#DCDCAA">Empresa</tspan><tspan fill="#D4D4D4">  = </tspan><tspan fill="#CE9178">&quot;Embraer&quot;</tspan></text></g>
+<g class="fade" style="animation-delay:1.10s"><text x="38" y="175" font-size="12.5" fill="#6E7681" text-anchor="end" class="mono">6</text><text x="54" y="175" font-size="13" class="mono" xml:space="preserve"><tspan fill="#569CD6">        VAR </tspan><tspan fill="#DCDCAA">Area</tspan><tspan fill="#D4D4D4">     = </tspan><tspan fill="#CE9178">&quot;Supply Chain&quot;</tspan></text></g>
+<g class="fade" style="animation-delay:1.26s"><text x="38" y="196" font-size="12.5" fill="#6E7681" text-anchor="end" class="mono">7</text><text x="54" y="196" font-size="13" class="mono" xml:space="preserve"><tspan fill="#569CD6">        VAR </tspan><tspan fill="#DCDCAA">Foco</tspan><tspan fill="#D4D4D4">     = </tspan><tspan fill="#CE9178">&quot;Business Intelligence&quot;</tspan></text></g>
+<g class="fade" style="animation-delay:1.42s"><text x="38" y="217" font-size="12.5" fill="#6E7681" text-anchor="end" class="mono">8</text><text x="54" y="217" font-size="13" class="mono" xml:space="preserve"><tspan fill="#569CD6">        VAR </tspan><tspan fill="#DCDCAA">Stack</tspan><tspan fill="#D4D4D4">    = </tspan><tspan fill="#CE9178">&quot;Power BI · DAX · SQL · Python&quot;</tspan></text></g>
+<g class="fade" style="animation-delay:1.58s"><text x="38" y="238" font-size="12.5" fill="#6E7681" text-anchor="end" class="mono">9</text><text x="54" y="238" font-size="13" class="mono" xml:space="preserve"><tspan fill="#569CD6">        RETURN</tspan></text></g>
+<g class="fade" style="animation-delay:1.74s"><text x="38" y="259" font-size="12.5" fill="#6E7681" text-anchor="end" class="mono">10</text><text x="54" y="259" font-size="13" class="mono" xml:space="preserve"><tspan fill="#D4D4D4">            </tspan><tspan fill="#DCDCAA">Cargo</tspan><tspan fill="#D4D4D4"> &amp; </tspan><tspan fill="#CE9178">&quot; @ &quot;</tspan><tspan fill="#D4D4D4"> &amp; </tspan><tspan fill="#DCDCAA">Empresa</tspan></text></g>
+<g class="fade" style="animation-delay:1.90s"><text x="38" y="280" font-size="12.5" fill="#6E7681" text-anchor="end" class="mono">11</text><text x="54" y="280" font-size="13" class="mono" xml:space="preserve"><tspan fill="#569CD6">EVALUATE</tspan></text></g>
+<g class="fade" style="animation-delay:2.06s"><text x="38" y="301" font-size="12.5" fill="#6E7681" text-anchor="end" class="mono">12</text><text x="54" y="301" font-size="13" class="mono" xml:space="preserve"><tspan fill="#D4D4D4">    { </tspan><tspan fill="#9CDCFE">[Raywã]</tspan><tspan fill="#D4D4D4"> }</tspan></text></g>
+<g class="up" style="animation-delay:2.52s"><rect x="0" y="326" width="600" height="1" fill="#3B3A39"/><text x="20" y="352" font-size="12" font-weight="700" fill="#F3F2F1">Resultados</text><text x="96" y="352" font-size="11" fill="#A19F9D">1 linha · 0,08 s</text><rect x="20" y="364" width="560" height="26" fill="#252423"/><text x="32" y="381" font-size="12" font-weight="600" fill="#D2D0CE">[Raywã]</text><rect x="20" y="390" width="560" height="30" fill="#232221" stroke="#3B3A39"/><text x="32" y="410" font-size="13" fill="#F3F2F1">Análise de Dados e Automação @ Embraer</text><rect x="554" y="398" width="2" height="15" fill="#F2C811" class="pulse"/></g>
+</g>
+<rect x=".5" y=".5" width="599" height="419" rx="10" fill="none" stroke="#3B3A39"/>
+</svg>
