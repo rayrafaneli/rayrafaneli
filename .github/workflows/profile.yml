@@ -1,0 +1,50 @@
+name: Atualiza perfil (métricas + snake)
+
+on:
+  schedule:
+    - cron: "0 9 * * *"   # todo dia às 06:00 (Brasília)
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/profile.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-output
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Métricas no estilo Power BI
+        run: python3 scripts/metrics.py dist/metrics.svg
+        env:
+          # Opcional: crie o secret METRICS_TOKEN (token pessoal com leitura de repositórios)
+          # para incluir os repositórios privados nas linguagens e no total de repositórios.
+          GH_TOKEN: ${{ secrets.METRICS_TOKEN || github.token }}
+          GH_USER: ${{ github.repository_owner }}
+
+      - name: Snake do gráfico de contribuições
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake.svg?color_snake=#C99A0E&color_dots=#EBEDF0,#FBE9A6,#F7D96A,#F2C811,#C99A0E
+            dist/snake-dark.svg?color_snake=#F2C811&color_dots=#252423,#5E4B0A,#8F710B,#C79C0D,#F2C811
+
+      - name: Publica no branch output
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+          commit_message: "chore: atualiza métricas do perfil"
+          keep_history: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
