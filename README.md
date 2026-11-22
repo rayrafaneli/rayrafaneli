@@ -1,15 +1,16 @@
 <!-- rayrafaneli.pbix · relatório de perfil -->
 <p align="center">
-  <img src="./assets/header.svg" width="100%" alt="Relatório de perfil no estilo Power BI: Raywã Rafaneli, Desenvolvedor BI, Análise de Dados e Automação na Embraer" />
+  <img src="./assets/header.svg" width="100%" alt="Relatório de perfil no estilo Power BI: Raywã Rafaneli, engenharia e ciência de dados, BI e automação" />
 </p>
 
 <p align="center">
   <a href="#sobre"><img src="./assets/tabs/sobre.svg" height="40" alt="01 Sobre" /></a>
-  <a href="#stack"><img src="./assets/tabs/stack.svg" height="40" alt="02 Stack" /></a>
-  <a href="#dados"><img src="./assets/tabs/dados.svg" height="40" alt="03 Dados & ML" /></a>
-  <a href="#rpa"><img src="./assets/tabs/rpa.svg" height="40" alt="04 Automação & RPA" /></a>
-  <a href="#metricas"><img src="./assets/tabs/metricas.svg" height="40" alt="05 Métricas" /></a>
-  <a href="#contato"><img src="./assets/tabs/contato.svg" height="40" alt="06 Contato" /></a>
+  <a href="#hackathons"><img src="./assets/tabs/hackathons.svg" height="40" alt="02 Hackathons" /></a>
+  <a href="#stack"><img src="./assets/tabs/stack.svg" height="40" alt="03 Stack" /></a>
+  <a href="#dados"><img src="./assets/tabs/dados.svg" height="40" alt="04 Dados & ML" /></a>
+  <a href="#rpa"><img src="./assets/tabs/rpa.svg" height="40" alt="05 Automação & RPA" /></a>
+  <a href="#metricas"><img src="./assets/tabs/metricas.svg" height="40" alt="06 Métricas" /></a>
+  <a href="#contato"><img src="./assets/tabs/contato.svg" height="40" alt="07 Contato" /></a>
 </p>
 
 <p align="center">
@@ -29,7 +30,7 @@
 
 <img src="./assets/dax.svg" width="47%" align="right" alt="Consulta DAX que descreve o perfil" />
 
-Sou **Raywã**, profissional de **dados** com um pé em cada ponta do pipeline: **engenharia de dados** (ETL, SQL, modelagem), **ciência de dados** (estatística, séries temporais e modelos de previsão) e **BI** para colocar o resultado na mão de quem decide. Hoje trabalho com **Análise de Dados e Automação na Embraer**, na área de **Supply Chain**.
+Sou **Raywã**, profissional de **dados** com um pé em cada ponta do pipeline: **engenharia de dados** (ETL, SQL, modelagem), **ciência de dados** (estatística, séries temporais e modelos de previsão) e **BI** para colocar o resultado na mão de quem decide. Hoje atuo com **análise de dados e automação** em Supply Chain na indústria aeronáutica (Embraer).
 
 O que eu faço:
 
@@ -39,8 +40,7 @@ O que eu faço:
 - 🤖 **Automação (RPA)**: robôs no **SAP** com SAP GUI Scripting, Python e VBA, OCR de documentos e e-mails automáticos
 - 🌐 **Web & .NET**: painéis em **HTML, CSS e JavaScript**, aplicações em **ASP.NET** e **VB.NET**
 
-🎓 Ciência da Computação na **UNIP** (2023–2027) · TCC de **predição de dengue com Machine Learning**, aprovado com **nota 10**.<br/>
-🏆 **HackaEmb 2026** · ConformAI: visão computacional para avaliar imagens de notas de não conformidade (hackathon de 5 dias, 14 equipes).
+🎓 Ciência da Computação na **UNIP** (2023–2027) · TCC de **predição de dengue com Machine Learning**, aprovado com **nota 10**.
 
 ```diff
 + dados limpos, modelados e com teste de qualidade
@@ -74,7 +74,15 @@ O que eu faço:
 
 <br/>
 
-<h2 id="stack"><img src="./assets/sections/stack.svg" width="100%" alt="Página 02 · Stack e competências" /></h2>
+<h2 id="hackathons"><img src="./assets/sections/hackathons.svg" width="100%" alt="Página 02 · Hackathons e conquistas" /></h2>
+
+<img src="./assets/banners/hackaemb-2026.svg" width="100%" alt="HackaEmb 2026: 4º lugar entre 14 times com o ConformAI, nota 9,29, a 0,08 do pódio" />
+
+> Uma semana de maratona com **140 participantes** em times mistos de TI e negócio. Nosso time, o **PacNine**, criou o **ConformAI**, um assistente com IA generativa para o registro de não conformidades; eu cuidei dos **dados e da integração da IA com a base de documentos (RAG)**. Fechamos em **4º lugar entre 14 times**, a 0,08 ponto do pódio.
+
+<br/>
+
+<h2 id="stack"><img src="./assets/sections/stack.svg" width="100%" alt="Página 03 · Stack e competências" /></h2>
 
 <p align="center">
   <img src="./assets/stack.svg" width="100%" alt="Matriz de competências: ciência de dados e estatística, machine learning, engenharia de dados, bancos, BI, automação e RPA, linguagens, web e .NET, cloud, bots, governança e cursos" />
@@ -86,7 +94,7 @@ O que eu faço:
 
 <br/>
 
-<h2 id="dados"><img src="./assets/sections/dados.svg" width="100%" alt="Página 03 · Engenharia e ciência de dados" /></h2>
+<h2 id="dados"><img src="./assets/sections/dados.svg" width="100%" alt="Página 04 · Engenharia e ciência de dados" /></h2>
 
 <a href="https://github.com/rayrafaneli/previsao-inflacao-bcb"><img src="./assets/banners/01-previsao-inflacao.svg" width="100%" alt="Projeto 01 · Previsão de Inflação: Estatística vs. Machine Learning" /></a>
 <a href="https://github.com/rayrafaneli/previsao-inflacao-bcb"><img src="./assets/projects/previsao-inflacao.svg" width="100%" alt="Estudo de previsão do IPCA alternando entre decomposição STL, sazonalidade e ACF, backtest dos modelos e previsão com intervalos" /></a>
@@ -109,7 +117,7 @@ O que eu faço:
 
 <br/>
 
-<h2 id="rpa"><img src="./assets/sections/rpa.svg" width="100%" alt="Página 04 · Automação e RPA" /></h2>
+<h2 id="rpa"><img src="./assets/sections/rpa.svg" width="100%" alt="Página 05 · Automação e RPA" /></h2>
 
 <img src="./assets/banners/04-rpa-sap.svg" width="100%" alt="Projeto 04 · Robôs Corporativos: SAP no Piloto Automático" />
 <img src="./assets/fluxo-rpa.svg" width="100%" alt="Fluxo animado: e-mail e PDFs, Python, SAP ERP, Oracle SQL, Excel e painel com e-mail" />
@@ -136,7 +144,7 @@ O que eu faço:
 
 <br/>
 
-<h2 id="metricas"><img src="./assets/sections/metricas.svg" width="100%" alt="Página 05 · Métricas do GitHub" /></h2>
+<h2 id="metricas"><img src="./assets/sections/metricas.svg" width="100%" alt="Página 06 · Métricas do GitHub" /></h2>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/rayrafaneli/rayrafaneli/output/metrics.svg" width="100%" alt="Métricas do GitHub no estilo Power BI: contribuições, sequência, repositórios e linguagens" />
@@ -152,7 +160,7 @@ O que eu faço:
 
 <br/>
 
-<h2 id="contato"><img src="./assets/sections/contato.svg" width="100%" alt="Página 06 · Contato" /></h2>
+<h2 id="contato"><img src="./assets/sections/contato.svg" width="100%" alt="Página 07 · Contato" /></h2>
 
 <p align="center">
   Quer conversar sobre <b>engenharia de dados, ciência de dados, BI ou automação</b>? Me chama.
