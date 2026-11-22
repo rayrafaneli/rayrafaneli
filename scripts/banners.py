@@ -305,18 +305,18 @@ def hackathon_2026():
     b.append(f'<g class="up">{_categoria(x0, 36, "HACKATHON DE IA · 2026", OURO)}</g>')
     b.append(f'<g class="up" style="animation-delay:.15s">{_titulo(x0, 98, "HackaEmb 2026: 4º lugar entre 14 times", _ajusta("HackaEmb 2026: 4º lugar entre 14 times", 32, 515), OURO)}</g>')
     b.append(f'<text x="{x0}" y="130" font-size="13.5" fill="{C["text2"]}" class="fade" style="animation-delay:.3s">'
-             f'1 semana · 140 participantes · recorde de 275 inscritos · times de 10 pessoas</text>')
+             f'5 dias de maratona · cerca de 140 colaboradores · 14 equipes multidisciplinares</text>')
     b.append(f'<g class="up" style="animation-delay:.45s">'
              f'<rect x="{x0}" y="152" width="510" height="108" rx="8" fill="{C["chrome"]}" stroke="{C["line"]}"/>'
              f'<rect x="{x0}" y="152" width="4" height="108" rx="2" fill="{OURO}"/>'
              f'<text x="{x0 + 20}" y="180" font-size="16" font-weight="800" fill="{C["text"]}">ConformAI'
              f'<tspan font-size="12.5" font-weight="400" fill="{C["muted"]}">  ·  time PacNine</tspan></text>'
-             f'<text x="{x0 + 20}" y="204" font-size="13" fill="{C["text2"]}">Assistente com IA generativa que guia o registro de</text>'
-             f'<text x="{x0 + 20}" y="222" font-size="13" fill="{C["text2"]}">não conformidades com fotos e gera o anexo no padrão.</text>'
+             f'<text x="{x0 + 20}" y="204" font-size="13" fill="{C["text2"]}">Orienta o registro de não conformidades: visão computacional</text>'
+             f'<text x="{x0 + 20}" y="222" font-size="13" fill="{C["text2"]}">avalia as fotos e a IA sugere os campos obrigatórios.</text>'
              f'<text x="{x0 + 20}" y="246" font-size="13" fill="{C["text"]}"><tspan fill="{OURO}" font-weight="700">Meu papel:</tspan>'
              f' dados e integração da IA com documentos (RAG)</text></g>')
     x = x0
-    for i, t in enumerate(["IA generativa", "RAG", "Python", "Pitch para banca"]):
+    for i, t in enumerate(["Visão computacional", "RAG", "IA", "Pitch para banca"]):
         c, w = _chip(x, 278, t, OURO)
         b.append(f'<g class="float" style="animation-delay:{i * .5:.1f}s">{c}</g>')
         x += w + 7
@@ -324,7 +324,7 @@ def hackathon_2026():
     px, py, pw, ph = 842, 30, 330, 270
     b.append(f'<rect x="{px}" y="{py}" width="{pw}" height="{ph}" rx="10" fill="{C["chrome"]}" stroke="{C["line"]}"/>')
     b.append(f'<text x="{px + 18}" y="{py + 30}" font-size="14" font-weight="700" fill="{C["text"]}">Classificação final</text>'
-             f'<text x="{px + 18}" y="{py + 48}" font-size="11" fill="{C["muted"]}">14 times · nota da banca</text>')
+             f'<text x="{px + 18}" y="{py + 48}" font-size="11" fill="{C["muted"]}">14 times · avaliação da banca</text>')
     for k in range(14):
         col, lin = k % 7, k // 7
         cx, cy = px + 34 + col * 44, py + 84 + lin * 60
@@ -340,19 +340,98 @@ def hackathon_2026():
     b.append(f'<text x="{px + 166}" y="{py + 117}" font-size="11" fill="{OURO}" text-anchor="middle" font-weight="700">'
              f'▲ PacNine</text>')
     gy = py + 206
-    b.append(f'<text x="{px + 18}" y="{gy}" font-size="12" fill="{C["muted"]}">nota do time</text>'
-             f'<text x="{px + pw - 18}" y="{gy}" font-size="20" font-weight="800" fill="{C["text"]}" text-anchor="end">9,29</text>'
-             f'<rect x="{px + 18}" y="{gy + 12}" width="{pw - 36}" height="12" rx="6" fill="{C["card2"]}"/>'
-             f'<rect x="{px + 18}" y="{gy + 12}" width="{(pw - 36) * .929:.1f}" height="12" rx="6" fill="url(#pbi)" class="fill"/>'
-             f'<rect x="{px + 18 + (pw - 36) * .937:.1f}" y="{gy + 6}" width="2.5" height="24" fill="{PRATA}"/>'
-             f'<text x="{px + pw - 18}" y="{gy + 46}" font-size="11" fill="{C["muted"]}" text-anchor="end">'
-             f'pódio a apenas <tspan fill="{OURO}" font-weight="700">0,08</tspan></text>')
+    b.append(f'<text x="{px + 18}" y="{gy}" font-size="12" fill="{C["muted"]}">colocação</text>'
+             f'<text x="{px + pw - 18}" y="{gy}" font-size="20" font-weight="800" fill="{C["text"]}" text-anchor="end">4º de 14</text>')
+    seg = (pw - 36 - 13 * 3) / 14
+    for k in range(14):
+        cor = {0: OURO, 1: PRATA, 2: BRONZE, 3: OURO}.get(k, C["card2"])
+        b.append(f'<rect x="{px + 18 + k * (seg + 3):.1f}" y="{gy + 12}" width="{seg:.1f}" height="12" rx="3" fill="{cor}" '
+                 f'opacity="{1 if k < 4 else .9}" class="cell" style="animation-delay:{k * .12:.2f}s"/>')
+    b.append(f'<text x="{px + pw - 18}" y="{gy + 46}" font-size="11" fill="{C["muted"]}" text-anchor="end">'
+             f'top 4 · <tspan fill="{OURO}" font-weight="700">quase no pódio</tspan></text>')
     b.append('</g>')
     b.append(f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="12" fill="none" stroke="{C["line"]}"/>')
     defs = _defs(OURO) + (f'<radialGradient id="medalha"><stop offset="0" stop-color="#FFE27A"/>'
                           f'<stop offset="1" stop-color="#C67A0A"/></radialGradient>')
-    return svg(W, H, "\n".join(b), "HackaEmb 2026: 4º lugar entre 14 times com o ConformAI, nota 9,29, a 0,08 do pódio",
+    return svg(W, H, "\n".join(b), "HackaEmb 2026: 4º lugar entre 14 times com o ConformAI, time PacNine",
                css=CSS, defs=defs)
+
+
+def _foto_b64(caminho, largura, altura):
+    from carousel import jpeg_b64
+    return jpeg_b64(Path(caminho), largura, altura)
+
+
+FOTO_CSS = ".kb{transform-box:fill-box;transform-origin:50% 45%;animation:kb 18s ease-in-out infinite alternate;}" \
+           "@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07) translate(-1%,1%)}}"
+
+
+def foto_2026(caminho):
+    W, iw = 1200, 1176
+    ih = round(iw * 591 / 1052)
+    H = ih + 24
+    OURO = "#F2C811"
+    d = _foto_b64(caminho, round(iw * 1.15), round(ih * 1.15))
+    b = [f'<clipPath id="ft"><rect x="12" y="12" width="{iw}" height="{ih}" rx="10"/></clipPath>',
+         f'<rect width="{W}" height="{H}" rx="14" fill="{C["page"]}"/>',
+         f'<g clip-path="url(#ft)"><image class="kb" x="12" y="12" width="{iw}" height="{ih}" href="data:image/jpeg;base64,{d}"/>'
+         f'<rect x="12" y="{12 + ih - 150}" width="{iw}" height="150" fill="url(#sombra)"/>'
+         f'<rect class="sweep" x="12" y="12" width="260" height="{ih}" fill="url(#brilho)" opacity=".12"/></g>',
+         f'<g class="up" style="animation-delay:.3s">'
+         f'<text x="44" y="{ih - 46}" font-size="30" font-weight="800" fill="#FFFFFF">Time PacNine</text>'
+         f'<text x="44" y="{ih - 18}" font-size="15" fill="#E6E6E6">HackaEmb 2026 · ConformAI · 5 dias de maratona</text></g>',
+         f'<g class="pop" style="animation-duration:3s"><rect x="{W - 252}" y="{ih - 86}" width="208" height="56" rx="28" '
+         f'fill="#1B1A19" fill-opacity=".85" stroke="{OURO}" stroke-width="2"/>'
+         f'<circle cx="{W - 220}" cy="{ih - 58}" r="17" fill="url(#medalha)"/>'
+         f'<text x="{W - 220}" y="{ih - 52}" font-size="15" font-weight="800" fill="#2A2210" text-anchor="middle">4º</text>'
+         f'<text x="{W - 193}" y="{ih - 61}" font-size="15" font-weight="800" fill="{OURO}">4º LUGAR</text>'
+         f'<text x="{W - 193}" y="{ih - 43}" font-size="11.5" fill="#E6E6E6">entre 14 times</text></g>',
+         f'<rect x="12" y="12" width="{iw}" height="{ih}" rx="10" fill="none" stroke="{OURO}" stroke-opacity=".55" '
+         f'stroke-width="2" class="breath"/>']
+    defs = ('<linearGradient id="sombra" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/>'
+            '<stop offset="1" stop-color="#000" stop-opacity=".78"/></linearGradient>'
+            '<linearGradient id="brilho" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/>'
+            '<stop offset=".5" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'
+            '<radialGradient id="medalha"><stop offset="0" stop-color="#FFE27A"/><stop offset="1" stop-color="#C67A0A"/></radialGradient>')
+    return svg(W, H, "\n".join(b), "Foto do time PacNine no HackaEmb 2026, 4º lugar entre 14 times", css=CSS + FOTO_CSS, defs=defs)
+
+
+def hackathon_2025(caminho):
+    W, H = 1200, 430
+    cor = AZUL
+    fw, fh = 540, 404
+    d = _foto_b64(caminho, round(fw * 1.4), round(fh * 1.4))
+    b = [f'<clipPath id="c"><rect width="{W}" height="{H}" rx="12"/></clipPath><g clip-path="url(#c)">',
+         f'<rect width="{W}" height="{H}" fill="{C["page"]}"/>',
+         f'<circle cx="{W}" cy="0" r="520" fill="url(#glow)" class="breath"/>',
+         f'<rect width="{W}" height="3" fill="{cor}"/>',
+         f'<rect class="sweep" x="0" y="{H - 3}" width="300" height="3" fill="url(#sweepg)"/>',
+         f'<clipPath id="ft"><rect x="13" y="13" width="{fw}" height="{fh}" rx="10"/></clipPath>',
+         f'<g clip-path="url(#ft)"><image class="kb" x="13" y="13" width="{fw}" height="{fh}" href="data:image/jpeg;base64,{d}"/>'
+         f'<rect x="13" y="{13 + fh - 90}" width="{fw}" height="90" fill="url(#sombra)"/></g>',
+         f'<text x="34" y="{fh - 14}" font-size="20" font-weight="800" fill="#FFFFFF" class="up">Time Kai7en</text>',
+         f'<rect x="13" y="13" width="{fw}" height="{fh}" rx="10" fill="none" stroke="{cor}" stroke-opacity=".6" stroke-width="2" class="breath"/>']
+    x0 = 590
+    b.append(f'<g class="up">{_categoria(x0, 30, "HACKATHON DE IA · 2025", cor)}</g>')
+    b.append(f'<text x="{x0}" y="100" font-size="34" font-weight="800" fill="{C["text"]}" class="up" style="animation-delay:.1s">HackaEmb 2025</text>')
+    b.append(f'<text x="{x0}" y="136" font-size="22" font-weight="800" fill="{cor}" class="up" style="animation-delay:.2s">'
+             f'Agentes de IA para Simplificação</text>')
+    for i, linha in enumerate(_quebra("Minha primeira competição de programação: no time Kai7en, pensamos em como a "
+                                      "tecnologia pode simplificar processos complexos do dia a dia, deixando as rotinas "
+                                      "mais intuitivas e democratizando o conhecimento.", 14, 580)):
+        b.append(f'<text x="{x0}" y="{172 + i * 21}" font-size="14" fill="{C["text2"]}" class="fade" style="animation-delay:.35s">{e(linha)}</text>')
+    b.append(_kpis(x0, 262, 586, 62, [("1ª", "participação"), ("40 h", "de maratona"), ("5", "dias · 15 a 19/09")], cor))
+    x = x0
+    for i, t in enumerate(["Agentes de IA", "Trabalho em equipe", "Pitch", "Innovation Month"]):
+        c, w = _chip(x, 346, t, cor)
+        b.append(f'<g class="float" style="animation-delay:{i * .5:.1f}s">{c}</g>')
+        x += w + 7
+    b.append('</g>')
+    b.append(f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="12" fill="none" stroke="{C["line"]}"/>')
+    defs = _defs(cor) + ('<linearGradient id="sombra" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/>'
+                         '<stop offset="1" stop-color="#000" stop-opacity=".75"/></linearGradient>')
+    return svg(W, H, "\n".join(b), "HackaEmb 2025, Agentes de IA para Simplificação: primeira participação, time Kai7en, "
+                                  "5 dias e 40 horas de maratona", css=CSS + FOTO_CSS, defs=defs)
 
 
 PROJETOS = {
@@ -368,9 +447,9 @@ PROJETOS = {
         [("6", "séries oficiais"), ("852", "linhas no fato"), ("19 s", "pipeline completo")], "pipeline", AMARELO),
     "03-epidemiological-forecaster": banner(
         3, "MACHINE LEARNING · TCC NOTA 10", "Epidemiological Forecaster: Dengue Bairro a Bairro",
-        "Clima do INMET, IBGE e DATASUS em PostgreSQL, XGBoost servido por API e painel de risco",
+        "4 modelos XGBoost preveem o risco de 1 a 4 semanas à frente nos 94 bairros do Recife",
         ["Python", "XGBoost", "PostgreSQL", "FastAPI", "Streamlit", "Plotly"],
-        [("10", "nota do TCC"), ("94", "bairros do Recife"), ("4", "níveis de alerta")], "riscos", LARANJA),
+        [("10", "nota do TCC"), ("> 85%", "F1-Macro (1 semana)"), ("> 95%", "acurácia (1 semana)")], "riscos", LARANJA),
     "04-rpa-sap": banner(
         4, "RPA · EM PRODUÇÃO", "Robôs Corporativos: SAP no Piloto Automático",
         "Python e VBA operando SAP GUI, Outlook, OCR de PDFs e Oracle SQL nas rotinas de Supply Chain",
@@ -399,6 +478,10 @@ def main():
         print("ok", nome)
     (OUT / "ticker.svg").write_text(ticker(), encoding="utf-8")
     (OUT / "banners" / "hackaemb-2026.svg").write_text(hackathon_2026(), encoding="utf-8")
+    fotos = Path(__file__).resolve().parent.parent / "fotos"
+    if (fotos / "time-2026.jpg").exists():
+        (OUT / "banners" / "hackaemb-2026-foto.svg").write_text(foto_2026(fotos / "time-2026.jpg"), encoding="utf-8")
+        (OUT / "banners" / "hackaemb-2025.svg").write_text(hackathon_2025(fotos / "time-2025.jpg"), encoding="utf-8")
     print("ok ticker")
 
 
