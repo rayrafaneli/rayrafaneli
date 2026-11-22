@@ -6,9 +6,10 @@
 <p align="center">
   <a href="#sobre"><img src="./assets/tabs/sobre.svg" height="40" alt="01 Sobre" /></a>
   <a href="#stack"><img src="./assets/tabs/stack.svg" height="40" alt="02 Stack" /></a>
-  <a href="#projetos"><img src="./assets/tabs/projetos.svg" height="40" alt="03 Projetos" /></a>
-  <a href="#metricas"><img src="./assets/tabs/metricas.svg" height="40" alt="04 Métricas" /></a>
-  <a href="#contato"><img src="./assets/tabs/contato.svg" height="40" alt="05 Contato" /></a>
+  <a href="#dados"><img src="./assets/tabs/dados.svg" height="40" alt="03 Dados & BI" /></a>
+  <a href="#rpa"><img src="./assets/tabs/rpa.svg" height="40" alt="04 Automação & RPA" /></a>
+  <a href="#metricas"><img src="./assets/tabs/metricas.svg" height="40" alt="05 Métricas" /></a>
+  <a href="#contato"><img src="./assets/tabs/contato.svg" height="40" alt="06 Contato" /></a>
 </p>
 
 <p align="center">
@@ -38,6 +39,7 @@ No dia a dia:
 
 ```diff
 + modelando, medindo e publicando dashboards
++ automatizando o que é repetitivo
 + aberto a conversas sobre BI, dados e automação
 - planilha manual (estou automatizando)
 ```
@@ -70,20 +72,38 @@ No dia a dia:
 <h2 id="stack"><img src="./assets/sections/stack.svg" width="100%" alt="Página 02 · Stack e competências" /></h2>
 
 <p align="center">
-  <img src="./assets/stack.svg" width="100%" alt="Matriz de competências por área: BI, dados e ETL, automação, desenvolvimento, cloud, IA, governança e estudos" />
+  <img src="./assets/stack.svg" width="100%" alt="Matriz de competências por área: BI, dados e ETL, bancos, automação, bots, linguagens, desenvolvimento, cloud, IA, governança e estudos" />
 </p>
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,dotnet,docker,aws,git,github,githubactions,fastapi,sqlite,supabase,vscode&theme=dark" alt="Python, .NET, Docker, AWS, Git, GitHub, GitHub Actions, FastAPI, SQLite, Supabase, VS Code" />
+  <img src="https://skillicons.dev/icons?i=python,java,cs,dotnet,html,css,docker,aws,git,github,githubactions,fastapi,sqlite,supabase,sklearn,vscode,pycharm,idea&perline=9&theme=dark" alt="Python, Java, C#, .NET, HTML, CSS, Docker, AWS, Git, GitHub, GitHub Actions, FastAPI, SQLite, Supabase, Scikit-learn, VS Code, PyCharm, IntelliJ" />
 </p>
 
 <br/>
 
-<h2 id="projetos"><img src="./assets/sections/projetos.svg" width="100%" alt="Página 03 · Projetos em destaque" /></h2>
+<h2 id="dados"><img src="./assets/sections/dados.svg" width="100%" alt="Página 03 · Projetos de dados e BI" /></h2>
 
-### 🦟 [SIPD · Sistema Inteligente de Predição de Dengue](https://github.com/rayrafaneli/epidemiological-forecaster) &nbsp;`TCC · nota 10`
+### 📊 [Pipeline de indicadores econômicos](https://github.com/rayrafaneli/pipeline-indicadores-bcb) &nbsp;`ETL · modelo estrela · painel`
 
-Projeto em grupo que classifica o **risco de dengue nos bairros do Recife**. Junta dados climáticos do INMET, população do IBGE e notificações do DATASUS num pipeline de features; um modelo **XGBoost** prevê os casos da semana, uma **API em FastAPI** serve as previsões e o painel em **Streamlit** mostra KPIs, mapa de calor e o ranking de bairros por nível de alerta.
+Pipeline de ponta a ponta: extrai 6 séries oficiais da **API do Banco Central** (Selic, IPCA, dólar, desocupação, IBC-Br), transforma em um **modelo estrela mensal**, carrega no **DuckDB** com views analíticas em **SQL** (window functions, juro real), roda **checagens de qualidade** e alimenta um painel com cara de Power BI. Atualiza sozinho no GitHub Actions.
+
+<p>
+  <img src="https://img.shields.io/badge/Python-252423?style=flat-square&logo=python&logoColor=F2C811" alt="Python" />
+  <img src="https://img.shields.io/badge/SQL-252423?style=flat-square&logo=duckdb&logoColor=F2C811" alt="SQL" />
+  <img src="https://img.shields.io/badge/DuckDB-252423?style=flat-square&logo=duckdb&logoColor=F2C811" alt="DuckDB" />
+  <img src="https://img.shields.io/badge/pandas-252423?style=flat-square&logo=pandas&logoColor=F2C811" alt="pandas" />
+  <img src="https://img.shields.io/badge/Streamlit-252423?style=flat-square&logo=streamlit&logoColor=F2C811" alt="Streamlit" />
+  <img src="https://img.shields.io/badge/Plotly-252423?style=flat-square&logo=plotly&logoColor=F2C811" alt="Plotly" />
+  <img src="https://img.shields.io/badge/GitHub_Actions-252423?style=flat-square&logo=githubactions&logoColor=F2C811" alt="GitHub Actions" />
+</p>
+
+<a href="https://github.com/rayrafaneli/pipeline-indicadores-bcb"><img src="./assets/projects/pipeline-bcb.svg" width="100%" alt="Painel de indicadores econômicos alternando entre visão geral, juros e inflação, câmbio e atividade" /></a>
+
+---
+
+### 🦟 [Epidemiological Forecaster](https://github.com/rayrafaneli/epidemiological-forecaster) &nbsp;`TCC · nota 10`
+
+Projeto em grupo que classifica o **risco de dengue nos bairros do Recife**. Junta dados climáticos do INMET, população do IBGE e notificações do DATASUS num pipeline de features; um modelo **XGBoost** prevê os casos da semana, uma **API em FastAPI** serve as previsões e o painel em **Streamlit** mostra KPIs, mapa de calor, ranking de bairros e pressão hospitalar.
 
 <p>
   <img src="https://img.shields.io/badge/Python-252423?style=flat-square&logo=python&logoColor=F2C811" alt="Python" />
@@ -94,7 +114,7 @@ Projeto em grupo que classifica o **risco de dengue nos bairros do Recife**. Jun
   <img src="https://img.shields.io/badge/Plotly-252423?style=flat-square&logo=plotly&logoColor=F2C811" alt="Plotly" />
 </p>
 
-<a href="https://github.com/rayrafaneli/epidemiological-forecaster"><img src="./assets/projects/sipd.png" width="100%" alt="Painel do SIPD com KPIs, mapa de calor e ranking de bairros por nível de alerta" /></a>
+<a href="https://github.com/rayrafaneli/epidemiological-forecaster"><img src="./assets/projects/epidemiological-forecaster.svg" width="100%" alt="Painel do Epidemiological Forecaster alternando entre dashboard de risco por bairro e pressão hospitalar" /></a>
 
 ---
 
@@ -104,42 +124,67 @@ Painel de acompanhamento de uma operação de **vídeos curtos 100% automatizada
 
 <p>
   <img src="https://img.shields.io/badge/Python-252423?style=flat-square&logo=python&logoColor=F2C811" alt="Python" />
+  <img src="https://img.shields.io/badge/SQLite-252423?style=flat-square&logo=sqlite&logoColor=F2C811" alt="SQLite" />
   <img src="https://img.shields.io/badge/Streamlit-252423?style=flat-square&logo=streamlit&logoColor=F2C811" alt="Streamlit" />
   <img src="https://img.shields.io/badge/Plotly-252423?style=flat-square&logo=plotly&logoColor=F2C811" alt="Plotly" />
-  <img src="https://img.shields.io/badge/SQLite-252423?style=flat-square&logo=sqlite&logoColor=F2C811" alt="SQLite" />
-  <img src="https://img.shields.io/badge/GitHub_Actions-252423?style=flat-square&logo=githubactions&logoColor=F2C811" alt="GitHub Actions" />
   <img src="https://img.shields.io/badge/YouTube_API-252423?style=flat-square&logo=youtube&logoColor=F2C811" alt="YouTube API" />
+  <img src="https://img.shields.io/badge/GitHub_Actions-252423?style=flat-square&logo=githubactions&logoColor=F2C811" alt="GitHub Actions" />
+</p>
+
+<img src="./assets/projects/central-kpis.svg" width="100%" alt="Central de KPIs alternando entre visão geral, canais e produção automática" />
+
+<br/>
+
+<h2 id="rpa"><img src="./assets/sections/rpa.svg" width="100%" alt="Página 04 · Automação e RPA" /></h2>
+
+### 🤖 [RPA Challenge](https://github.com/rayrafaneli/rpa-challenge-python) &nbsp;`100% · 70/70 campos`
+
+Robô em **Python + Playwright** que resolve o [RPA Challenge](https://rpachallenge.com/): baixa a planilha pelo próprio site, lê os registros com **openpyxl** e preenche 10 formulários cujos campos **mudam de posição a cada envio**. O robô encontra cada campo pelo nome lógico, nunca pela posição, e fecha com **100% de acerto em ~0,7 s**. Testes com pytest e execução agendada no GitHub Actions.
+
+<p>
+  <img src="https://img.shields.io/badge/Python-252423?style=flat-square&logo=python&logoColor=F2C811" alt="Python" />
+  <img src="https://img.shields.io/badge/Playwright-252423?style=flat-square&logo=playwright&logoColor=F2C811" alt="Playwright" />
+  <img src="https://img.shields.io/badge/Excel-252423?style=flat-square&logo=microsoftexcel&logoColor=F2C811" alt="Excel" />
+  <img src="https://img.shields.io/badge/pytest-252423?style=flat-square&logo=pytest&logoColor=F2C811" alt="pytest" />
+</p>
+
+<a href="https://github.com/rayrafaneli/rpa-challenge-python"><img src="./assets/projects/rpa-challenge.gif" width="100%" alt="Robô preenchendo os 10 formulários do RPA Challenge até 100% de acerto" /></a>
+
+---
+
+### 📚 [Robô de catálogo → relatório Excel](https://github.com/rayrafaneli/robo-catalogo-excel) &nbsp;`1.000 itens · 24 s`
+
+RPA que navega um catálogo web inteiro como um usuário (50 categorias, seguindo a paginação), consolida **1.000 registros** e entrega um **relatório Excel** com KPIs, formatação condicional e gráficos nativos, mais um **e-mail HTML** com o resumo e a planilha anexada (SMTP). Roda todo dia útil no GitHub Actions.
+
+<p>
+  <img src="https://img.shields.io/badge/Python-252423?style=flat-square&logo=python&logoColor=F2C811" alt="Python" />
+  <img src="https://img.shields.io/badge/Playwright-252423?style=flat-square&logo=playwright&logoColor=F2C811" alt="Playwright" />
+  <img src="https://img.shields.io/badge/pandas-252423?style=flat-square&logo=pandas&logoColor=F2C811" alt="pandas" />
+  <img src="https://img.shields.io/badge/Excel-252423?style=flat-square&logo=microsoftexcel&logoColor=F2C811" alt="Excel" />
+  <img src="https://img.shields.io/badge/SMTP-252423?style=flat-square&logo=gmail&logoColor=F2C811" alt="SMTP" />
 </p>
 
 <p align="center">
-  <img src="./assets/projects/kpis-visao-geral.png" width="49%" alt="Central de KPIs: visão geral com cartões de inscritos e views e gráfico de views por dia por canal" />
-  <img src="./assets/projects/kpis-producao.png" width="49%" alt="Central de KPIs: produção automática com vídeos publicados por dia em cada canal" />
+  <a href="https://github.com/rayrafaneli/robo-catalogo-excel"><img src="./assets/projects/robo-catalogo.gif" width="62%" alt="Robô navegando as 50 categorias do catálogo" /></a>
+  <img src="./assets/projects/robo-catalogo-email.png" width="36%" alt="E-mail gerado pelo robô com KPIs e gráfico" />
 </p>
 
 ---
 
-### 🏭 Dashboards corporativos · Embraer &nbsp;`confidencial`
-
-Desenvolvimento e manutenção de **dashboards em Power BI** (DAX, Power Query) e **Metabase** para as áreas de negócio de Supply Chain, alimentados por **SQL (Oracle)** e rotinas de **ETL em Pentaho**. Por compliance, telas e dados ficam fora do GitHub.
-
-<p align="center">
-  <img src="./assets/confidencial.svg" width="100%" alt="Dashboard corporativo desfocado com o aviso: conteúdo confidencial" />
-</p>
-
----
-
-### 🧩 Mais projetos
+### 🧩 Mais automações
 
 | Projeto | O que faz | Stack |
 |---|---|---|
-| **ConformAI** · HackaEmb 2026 | Hackathon de 5 dias com 14 equipes: visão computacional que avalia a qualidade das imagens anexadas a notas de não conformidade e sugere o preenchimento dos campos obrigatórios | Python · IA · Visão computacional |
 | **auto-videos** <sub>privado</sub> | Fábrica de Shorts: roteiro, narração e render com ffmpeg em piloto automático no GitHub Actions, com aprovação pelo Telegram e aprendizado a partir dos KPIs | Python · ffmpeg · GitHub Actions · LLMs |
-| **affiliate_bot** <sub>privado</sub> | Bot de Telegram que converte links de afiliado, varre ofertas e gera vídeos curtos para várias redes | Python · Docker · SQLite · APIs |
+| **affiliate_bot** <sub>privado</sub> | Bot de Telegram que converte links de afiliado, varre ofertas e gera vídeos curtos para várias redes | Python · Telethon · Docker · SQLite |
+| **Shopee Android Automator** <sub>privado</sub> | Base de app Android que usa o Serviço de Acessibilidade para automatizar a postagem de vídeos pelo celular | Java · Android · Gradle |
+| **ConformAI** · HackaEmb 2026 | Hackathon de 5 dias com 14 equipes: visão computacional que avalia as imagens anexadas a notas de não conformidade e sugere o preenchimento dos campos obrigatórios | Python · IA · Visão computacional |
+| **Chat cliente-servidor** <sub>privado</sub> | Chat em Java com sockets, salas e múltiplos clientes (UNIP) | Java · Maven · Sockets |
 | [**biometric-auth-system**](https://github.com/rayrafaneli/biometric-auth-system) | Cadastro e autenticação por reconhecimento facial | Python · SQLite |
 
 <br/>
 
-<h2 id="metricas"><img src="./assets/sections/metricas.svg" width="100%" alt="Página 04 · Métricas do GitHub" /></h2>
+<h2 id="metricas"><img src="./assets/sections/metricas.svg" width="100%" alt="Página 05 · Métricas do GitHub" /></h2>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/rayrafaneli/rayrafaneli/output/metrics.svg" width="100%" alt="Métricas do GitHub no estilo Power BI: contribuições, sequência, repositórios e linguagens" />
@@ -155,10 +200,10 @@ Desenvolvimento e manutenção de **dashboards em Power BI** (DAX, Power Query) 
 
 <br/>
 
-<h2 id="contato"><img src="./assets/sections/contato.svg" width="100%" alt="Página 05 · Contato" /></h2>
+<h2 id="contato"><img src="./assets/sections/contato.svg" width="100%" alt="Página 06 · Contato" /></h2>
 
 <p align="center">
-  Quer conversar sobre <b>Power BI, modelagem de dados ou automação</b>? Me chama.
+  Quer conversar sobre <b>Power BI, engenharia de dados ou automação</b>? Me chama.
 </p>
 
 <p align="center">
