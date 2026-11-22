@@ -6,7 +6,7 @@
 <p align="center">
   <a href="#sobre"><img src="./assets/tabs/sobre.svg" height="40" alt="01 Sobre" /></a>
   <a href="#stack"><img src="./assets/tabs/stack.svg" height="40" alt="02 Stack" /></a>
-  <a href="#dados"><img src="./assets/tabs/dados.svg" height="40" alt="03 Dados & BI" /></a>
+  <a href="#dados"><img src="./assets/tabs/dados.svg" height="40" alt="03 Dados & ML" /></a>
   <a href="#rpa"><img src="./assets/tabs/rpa.svg" height="40" alt="04 Automação & RPA" /></a>
   <a href="#metricas"><img src="./assets/tabs/metricas.svg" height="40" alt="05 Métricas" /></a>
   <a href="#contato"><img src="./assets/tabs/contato.svg" height="40" alt="06 Contato" /></a>
@@ -25,22 +25,22 @@
 
 <img src="./assets/dax.svg" width="47%" align="right" alt="Consulta DAX que descreve o perfil" />
 
-Sou **Raywã**, trabalho com **Análise de Dados e Automação na Embraer**, na área de **Supply Chain**. Meu foco é **desenvolver BI**: transformar dado bruto em painéis que as áreas de negócio usam para decidir.
+Sou **Raywã**, profissional de **dados** com um pé em cada ponta do pipeline: **engenharia de dados** (ETL, SQL, modelagem), **ciência de dados** (estatística, séries temporais e modelos de previsão) e **BI** para colocar o resultado na mão de quem decide. Hoje trabalho com **Análise de Dados e Automação na Embraer**, na área de **Supply Chain**.
 
-No dia a dia:
+O que eu faço:
 
-- 📊 Dashboards em **Power BI** (DAX, Power Query) e **Metabase**
-- 🛢️ Extração e análise com **SQL (Oracle)** e **Python (Pandas)**
-- 🔁 Rotinas de **ETL** com Pentaho Data Integration
-- 🤖 Automação de processos (**RPA**) com Python, VBA e SAP GUI Scripting
-- 🧱 Apoio a **modelagem e governança de dados** e adequação à **LGPD**
+- 🛠️ **Engenharia de dados**: pipelines de ETL com **Pentaho PDI** e **Python**, **Oracle SQL**, **PostgreSQL**, **MySQL** e modelagem dimensional
+- 📐 **Ciência de dados**: estatística inferencial, testes de hipótese, séries temporais (**SARIMA**), **XGBoost** e validação walk-forward
+- 📊 **BI**: dashboards em **Power BI** (nível avançado: DAX, Power Query), **Metabase** e **Streamlit**
+- 🤖 **Automação (RPA)**: robôs no **SAP** com SAP GUI Scripting, Python e VBA, OCR de documentos e e-mails automáticos
+- 🌐 **Web & .NET**: painéis em **HTML, CSS e JavaScript**, aplicações em **ASP.NET** e **VB.NET**
 
-🎓 Ciência da Computação na **UNIP** (2023–2027) · TCC com **Machine Learning**, aprovado com **nota 10**.
+🎓 Ciência da Computação na **UNIP** (2023–2027) · TCC de **predição de dengue com Machine Learning**, aprovado com **nota 10**.
 
 ```diff
-+ modelando, medindo e publicando dashboards
-+ automatizando o que é repetitivo
-+ aberto a conversas sobre BI, dados e automação
++ dados limpos, modelados e com teste de qualidade
++ previsão com estatística antes de modelo complexo
++ robôs fazendo o trabalho repetitivo
 - planilha manual (estou automatizando)
 ```
 
@@ -72,20 +72,38 @@ No dia a dia:
 <h2 id="stack"><img src="./assets/sections/stack.svg" width="100%" alt="Página 02 · Stack e competências" /></h2>
 
 <p align="center">
-  <img src="./assets/stack.svg" width="100%" alt="Matriz de competências por área: BI, dados e ETL, bancos, automação, bots, linguagens, desenvolvimento, cloud, IA, governança e estudos" />
+  <img src="./assets/stack.svg" width="100%" alt="Matriz de competências: ciência de dados e estatística, machine learning, engenharia de dados, bancos, BI, automação e RPA, linguagens, web e .NET, cloud, bots, governança e cursos" />
 </p>
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,java,cs,dotnet,html,css,docker,aws,git,github,githubactions,fastapi,sqlite,supabase,sklearn,vscode,pycharm,idea&perline=9&theme=dark" alt="Python, Java, C#, .NET, HTML, CSS, Docker, AWS, Git, GitHub, GitHub Actions, FastAPI, SQLite, Supabase, Scikit-learn, VS Code, PyCharm, IntelliJ" />
+  <img src="https://skillicons.dev/icons?i=python,java,cs,dotnet,html,css,js,postgres,mysql,sqlite,sklearn,docker,aws,git,github,githubactions,fastapi,vscode&perline=9&theme=dark" alt="Python, Java, C#, .NET, HTML, CSS, JavaScript, PostgreSQL, MySQL, SQLite, Scikit-learn, Docker, AWS, Git, GitHub, GitHub Actions, FastAPI, VS Code" />
 </p>
 
 <br/>
 
-<h2 id="dados"><img src="./assets/sections/dados.svg" width="100%" alt="Página 03 · Projetos de dados e BI" /></h2>
+<h2 id="dados"><img src="./assets/sections/dados.svg" width="100%" alt="Página 03 · Engenharia e ciência de dados" /></h2>
 
-### 📊 [Pipeline de indicadores econômicos](https://github.com/rayrafaneli/pipeline-indicadores-bcb) &nbsp;`ETL · modelo estrela · painel`
+### 📐 [Previsão de inflação (IPCA)](https://github.com/rayrafaneli/previsao-inflacao-bcb) &nbsp;`estatística · séries temporais · ML`
 
-Pipeline de ponta a ponta: extrai 6 séries oficiais da **API do Banco Central** (Selic, IPCA, dólar, desocupação, IBC-Br), transforma em um **modelo estrela mensal**, carrega no **DuckDB** com views analíticas em **SQL** (window functions, juro real), roda **checagens de qualidade** e alimenta um painel com cara de Power BI. Atualiza sozinho no GitHub Actions.
+Estudo de ciência de dados com 22 anos de dados do Banco Central. Testa **estacionariedade** (ADF e KPSS), decompõe a série com **STL**, mede a sazonalidade com **intervalos de confiança de 95%**, analisa **ACF/PACF** e compara **6 modelos** (naive sazonal, média móvel, **SARIMA**, **Ridge**, **XGBoost** e ensemble) em **backtest walk-forward** de 36 meses. A significância das diferenças é verificada com o **teste de Diebold-Mariano**, e a projeção de 12 meses sai com intervalos de 80% e 95%. Spoiler honesto: o naive sazonal é uma referência difícil de bater.
+
+<p>
+  <img src="https://img.shields.io/badge/Python-252423?style=flat-square&logo=python&logoColor=F2C811" alt="Python" />
+  <img src="https://img.shields.io/badge/statsmodels-252423?style=flat-square" alt="statsmodels" />
+  <img src="https://img.shields.io/badge/SciPy-252423?style=flat-square&logo=scipy&logoColor=F2C811" alt="SciPy" />
+  <img src="https://img.shields.io/badge/scikit--learn-252423?style=flat-square&logo=scikitlearn&logoColor=F2C811" alt="scikit-learn" />
+  <img src="https://img.shields.io/badge/XGBoost-252423?style=flat-square" alt="XGBoost" />
+  <img src="https://img.shields.io/badge/pandas-252423?style=flat-square&logo=pandas&logoColor=F2C811" alt="pandas" />
+  <img src="https://img.shields.io/badge/pytest-252423?style=flat-square&logo=pytest&logoColor=F2C811" alt="pytest" />
+</p>
+
+<a href="https://github.com/rayrafaneli/previsao-inflacao-bcb"><img src="./assets/projects/previsao-inflacao.svg" width="100%" alt="Estudo de previsão do IPCA alternando entre decomposição STL, sazonalidade e ACF, backtest dos modelos e previsão com intervalos" /></a>
+
+---
+
+### 🛠️ [Pipeline de indicadores econômicos](https://github.com/rayrafaneli/pipeline-indicadores-bcb) &nbsp;`engenharia de dados · ETL · modelo estrela`
+
+Pipeline de ponta a ponta: extrai 6 séries oficiais da **API do Banco Central** (Selic, IPCA, dólar, desocupação, IBC-Br), transforma em um **modelo estrela mensal**, carrega no **DuckDB** com views analíticas em **SQL** (window functions, juro real), roda **checagens de qualidade** (nulos, duplicidade, integridade referencial, defasagem) e alimenta um painel com cara de Power BI. Atualiza sozinho no GitHub Actions.
 
 <p>
   <img src="https://img.shields.io/badge/Python-252423?style=flat-square&logo=python&logoColor=F2C811" alt="Python" />
@@ -101,41 +119,34 @@ Pipeline de ponta a ponta: extrai 6 séries oficiais da **API do Banco Central**
 
 ---
 
-### 🦟 [Epidemiological Forecaster](https://github.com/rayrafaneli/epidemiological-forecaster) &nbsp;`TCC · nota 10`
+### 🦟 [Epidemiological Forecaster](https://github.com/rayrafaneli/epidemiological-forecaster) &nbsp;`TCC · nota 10 · predição`
 
-Projeto em grupo que classifica o **risco de dengue nos bairros do Recife**. Junta dados climáticos do INMET, população do IBGE e notificações do DATASUS num pipeline de features; um modelo **XGBoost** prevê os casos da semana, uma **API em FastAPI** serve as previsões e o painel em **Streamlit** mostra KPIs, mapa de calor, ranking de bairros e pressão hospitalar.
+Projeto em grupo que **prevê casos de dengue e classifica o risco nos bairros do Recife**. Junta dados climáticos do INMET, população do IBGE e notificações do DATASUS num banco **PostgreSQL**; um pipeline de features com defasagens de chuva e temperatura alimenta um modelo **XGBoost**, servido por uma **API em FastAPI**, e o painel em **Streamlit** mostra KPIs, mapa de calor, ranking de bairros e pressão hospitalar.
 
 <p>
   <img src="https://img.shields.io/badge/Python-252423?style=flat-square&logo=python&logoColor=F2C811" alt="Python" />
   <img src="https://img.shields.io/badge/XGBoost-252423?style=flat-square" alt="XGBoost" />
+  <img src="https://img.shields.io/badge/PostgreSQL-252423?style=flat-square&logo=postgresql&logoColor=F2C811" alt="PostgreSQL" />
   <img src="https://img.shields.io/badge/FastAPI-252423?style=flat-square&logo=fastapi&logoColor=F2C811" alt="FastAPI" />
   <img src="https://img.shields.io/badge/Streamlit-252423?style=flat-square&logo=streamlit&logoColor=F2C811" alt="Streamlit" />
-  <img src="https://img.shields.io/badge/Supabase-252423?style=flat-square&logo=supabase&logoColor=F2C811" alt="Supabase" />
   <img src="https://img.shields.io/badge/Plotly-252423?style=flat-square&logo=plotly&logoColor=F2C811" alt="Plotly" />
 </p>
 
 <a href="https://github.com/rayrafaneli/epidemiological-forecaster"><img src="./assets/projects/epidemiological-forecaster.svg" width="100%" alt="Painel do Epidemiological Forecaster alternando entre dashboard de risco por bairro e pressão hospitalar" /></a>
 
----
-
-### 📈 Central de KPIs · canais de vídeo automatizados &nbsp;`repositório privado`
-
-Painel de acompanhamento de uma operação de **vídeos curtos 100% automatizada** (quatro canais no YouTube, Telegram, Instagram e afiliados). Um coletor roda a cada 6 horas no **GitHub Actions**, grava os retratos num **SQLite** versionado e o painel em **Streamlit + Plotly** mostra inscritos, views por dia, retenção, progresso rumo à monetização e a produção diária de cada canal. Os mesmos KPIs realimentam a escolha de temas e formatos dos próximos vídeos.
-
-<p>
-  <img src="https://img.shields.io/badge/Python-252423?style=flat-square&logo=python&logoColor=F2C811" alt="Python" />
-  <img src="https://img.shields.io/badge/SQLite-252423?style=flat-square&logo=sqlite&logoColor=F2C811" alt="SQLite" />
-  <img src="https://img.shields.io/badge/Streamlit-252423?style=flat-square&logo=streamlit&logoColor=F2C811" alt="Streamlit" />
-  <img src="https://img.shields.io/badge/Plotly-252423?style=flat-square&logo=plotly&logoColor=F2C811" alt="Plotly" />
-  <img src="https://img.shields.io/badge/YouTube_API-252423?style=flat-square&logo=youtube&logoColor=F2C811" alt="YouTube API" />
-  <img src="https://img.shields.io/badge/GitHub_Actions-252423?style=flat-square&logo=githubactions&logoColor=F2C811" alt="GitHub Actions" />
-</p>
-
-<img src="./assets/projects/central-kpis.svg" width="100%" alt="Central de KPIs alternando entre visão geral, canais e produção automática" />
-
 <br/>
 
 <h2 id="rpa"><img src="./assets/sections/rpa.svg" width="100%" alt="Página 04 · Automação e RPA" /></h2>
+
+### 🏭 RPAs corporativos em SAP &nbsp;`em produção`
+
+No trabalho, automatizo rotinas de Supply Chain que antes eram manuais: robôs em **Python** e **VBA** que operam o **SAP ERP** via **SAP GUI Scripting** (consultas e atualizações em transações, leitura de grids, exportação de relatórios), leem a caixa do **Outlook**, extraem dados de **PDFs com OCR**, cruzam informações no **Oracle SQL**, geram planilhas e mandam **e-mails automáticos** com o status. O acompanhamento fica em **painéis web em HTML, CSS e JavaScript**. O código é da empresa, então aqui vai o desenho do fluxo:
+
+<p align="center">
+  <img src="./assets/fluxo-rpa.svg" width="100%" alt="Fluxo animado: e-mail e PDFs, Python, SAP ERP, Oracle SQL, Excel e painel com e-mail" />
+</p>
+
+---
 
 ### 🤖 [RPA Challenge](https://github.com/rayrafaneli/rpa-challenge-python) &nbsp;`100% · 70/70 campos`
 
@@ -171,13 +182,27 @@ RPA que navega um catálogo web inteiro como um usuário (50 categorias, seguind
 
 ---
 
-### 🧩 Mais automações
+### 🎬 auto-videos · fábrica de vídeos + Central de KPIs &nbsp;`repositório privado`
+
+Operação de **vídeos curtos 100% automatizada** para quatro canais no YouTube: roteiro, narração e render com **ffmpeg** em piloto automático no **GitHub Actions**, com aprovação pelo **Telegram**. Um coletor grava os KPIs a cada 6 horas num **SQLite** versionado; a **Central de KPIs** (Streamlit + Plotly) mostra inscritos, views, retenção e produção diária, e o próprio robô usa esses números para escolher temas e formatos dos próximos vídeos.
+
+<p>
+  <img src="https://img.shields.io/badge/Python-252423?style=flat-square&logo=python&logoColor=F2C811" alt="Python" />
+  <img src="https://img.shields.io/badge/ffmpeg-252423?style=flat-square&logo=ffmpeg&logoColor=F2C811" alt="ffmpeg" />
+  <img src="https://img.shields.io/badge/SQLite-252423?style=flat-square&logo=sqlite&logoColor=F2C811" alt="SQLite" />
+  <img src="https://img.shields.io/badge/Streamlit-252423?style=flat-square&logo=streamlit&logoColor=F2C811" alt="Streamlit" />
+  <img src="https://img.shields.io/badge/YouTube_API-252423?style=flat-square&logo=youtube&logoColor=F2C811" alt="YouTube API" />
+  <img src="https://img.shields.io/badge/GitHub_Actions-252423?style=flat-square&logo=githubactions&logoColor=F2C811" alt="GitHub Actions" />
+</p>
+
+<img src="./assets/projects/auto-videos.svg" width="100%" alt="Central de KPIs do auto-videos alternando entre visão geral, canais e produção automática" />
+
+---
+
+### 🧩 Mais projetos
 
 | Projeto | O que faz | Stack |
 |---|---|---|
-| **auto-videos** <sub>privado</sub> | Fábrica de Shorts: roteiro, narração e render com ffmpeg em piloto automático no GitHub Actions, com aprovação pelo Telegram e aprendizado a partir dos KPIs | Python · ffmpeg · GitHub Actions · LLMs |
-| **affiliate_bot** <sub>privado</sub> | Bot de Telegram que converte links de afiliado, varre ofertas e gera vídeos curtos para várias redes | Python · Telethon · Docker · SQLite |
-| **Shopee Android Automator** <sub>privado</sub> | Base de app Android que usa o Serviço de Acessibilidade para automatizar a postagem de vídeos pelo celular | Java · Android · Gradle |
 | **ConformAI** · HackaEmb 2026 | Hackathon de 5 dias com 14 equipes: visão computacional que avalia as imagens anexadas a notas de não conformidade e sugere o preenchimento dos campos obrigatórios | Python · IA · Visão computacional |
 | **Chat cliente-servidor** <sub>privado</sub> | Chat em Java com sockets, salas e múltiplos clientes (UNIP) | Java · Maven · Sockets |
 | [**biometric-auth-system**](https://github.com/rayrafaneli/biometric-auth-system) | Cadastro e autenticação por reconhecimento facial | Python · SQLite |
@@ -203,7 +228,7 @@ RPA que navega um catálogo web inteiro como um usuário (50 categorias, seguind
 <h2 id="contato"><img src="./assets/sections/contato.svg" width="100%" alt="Página 06 · Contato" /></h2>
 
 <p align="center">
-  Quer conversar sobre <b>Power BI, engenharia de dados ou automação</b>? Me chama.
+  Quer conversar sobre <b>engenharia de dados, ciência de dados, BI ou automação</b>? Me chama.
 </p>
 
 <p align="center">
