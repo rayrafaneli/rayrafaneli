@@ -40,7 +40,7 @@
 <g clip-path="url(#c)"><rect class="sweep" x="0" y="61" width="300" height="3" fill="url(#shine)"/></g>
 <g class="float"><rect x="22.0" y="32.0" width="5.0" height="8.0" rx="1.4" fill="url(#pbi)"/><rect x="29.0" y="27.0" width="5.0" height="13.0" rx="1.4" fill="url(#pbi)"/><rect x="36.0" y="22.0" width="5.0" height="18.0" rx="1.4" fill="url(#pbi)"/></g>
 <text x="54" y="38" font-size="15" font-weight="700" fill="#F3F2F1">Obrigado pela visita!</text>
-<text x="600" y="37" font-size="12" fill="#A19F9D" text-anchor="middle">Página 6 de 6 · relatório de perfil · rayrafaneli</text>
+<text x="600" y="37" font-size="12" fill="#A19F9D" text-anchor="middle">Página 7 de 7 · relatório de perfil · rayrafaneli</text>
 <circle cx="910" cy="32" r="4.5" fill="#1AAB40" class="pulse"/><text x="922" y="37" font-size="12" fill="#A19F9D">dados atualizados todo dia</text>
 <path d="M1080 32h8" stroke="#A19F9D" stroke-width="1.4"/><rect x="1096" y="31" width="52" height="2" rx="1" fill="#4A4846"/><circle cx="1122" cy="32" r="5" fill="#F3F2F1"><animate attributeName="cx" values="1104;1140;1104" dur="6s" repeatCount="indefinite"/></circle><path d="M1158 32h8M1162 28v8" stroke="#A19F9D" stroke-width="1.4"/>
 </svg>

@@ -8,7 +8,7 @@ from theme import C, DATA, chip, e, logo, svg, text_w, visual_icons
 
 OUT = Path(__file__).resolve().parent.parent / "assets"
 
-PAGES = [("sobre", "Sobre"), ("stack", "Stack"), ("dados", "Dados & ML"), ("rpa", "Automação & RPA"),
+PAGES = [("sobre", "Sobre"), ("hackathons", "Hackathons"), ("stack", "Stack"), ("dados", "Dados & ML"), ("rpa", "Automação & RPA"),
          ("metricas", "Métricas"), ("contato", "Contato")]
 
 LOOP_CSS = """
@@ -120,7 +120,7 @@ def header():
                  f'<rect x="{104 + text_w(fr.replace("&amp;", "&"), 19):.0f}" y="205" width="2.5" height="22" '
                  f'fill="{C["yellow"]}" class="caret"/></g>')
     b.append(f'<text x="100" y="252" font-size="14" fill="{C["muted"]}" class="fade" style="animation-delay:1.2s">'
-             f'<tspan fill="{C["yellow"]}">●</tspan> Embraer · Supply Chain · desde abr/2025</text>')
+             f'<tspan fill="{C["yellow"]}">●</tspan> Jacareí, SP · dados de ponta a ponta, do ETL à previsão</text>')
     x = 100
     for i, t in enumerate(["Python", "SQL", "Estatística", "Machine Learning", "Power BI"]):
         first = i == 0
@@ -160,7 +160,7 @@ def header():
              f'keyTimes="0;.1;.85;1" dur="3.2s" begin="2.8s" repeatCount="indefinite"/></circle>')
 
     # cartões de KPI
-    cards = [("Embraer", "Dados &amp; Automação", "Supply Chain · desde 2025", C["yellow"]),
+    cards = [("4º", "lugar no HackaEmb 2026", "entre 14 times · 2 hackathons", C["yellow"]),
              ("12", "certificações", "Power BI avançado · SQL · Python", DATA[0]),
              ("10", "nota no TCC", "predição com Machine Learning", DATA[1]),
              ("2027", "Ciência da Computação", "bacharelado · UNIP", DATA[2])]
@@ -216,7 +216,7 @@ def header():
     b.append('</g>')
     b.append(f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="12" fill="none" stroke="{C["line"]}"/>')
     return svg(W, H, "\n".join(b), "Relatório de perfil no estilo Power BI: Raywã Rafaneli, Desenvolvedor BI, "
-                                  "Análise de Dados e Automação na Embraer", css=LOOP_CSS)
+                                  "engenharia e ciência de dados", css=LOOP_CSS)
 
 
 # ------------------------------------------------------------------ abas (navegação)
@@ -267,13 +267,13 @@ DAX = [
     [("-- quem sou eu, em uma medida", CMT)],
     [("DEFINE", KW)],
     [("    MEASURE ", KW), ("Perfil", TBL), ("[Raywã]", COL), (" =", OP)],
-    [("        VAR ", KW), ("Cargo", VAR), ("    = ", OP), ('"Análise de Dados e Automação"', STR)],
-    [("        VAR ", KW), ("Empresa", VAR), ("  = ", OP), ('"Embraer"', STR)],
-    [("        VAR ", KW), ("Area", VAR), ("     = ", OP), ('"Supply Chain"', STR)],
-    [("        VAR ", KW), ("Foco", VAR), ("     = ", OP), ('"Engenharia e Ciência de Dados"', STR)],
-    [("        VAR ", KW), ("Stack", VAR), ("    = ", OP), ('"Python · SQL · Estatística · Power BI"', STR)],
+    [("        VAR ", KW), ("Area", VAR), ("       = ", OP), ('"Engenharia & Ciência de Dados"', STR)],
+    [("        VAR ", KW), ("Stack", VAR), ("      = ", OP), ('"Python · SQL · Estatística · Power BI"', STR)],
+    [("        VAR ", KW), ("Extra", VAR), ("      = ", OP), ('"RPA"', STR)],
+    [("        VAR ", KW), ("Hackathons", VAR), (" = ", OP), ("2", "#B5CEA8")],
+    [("        VAR ", KW), ("Destaque", VAR), ("   = ", OP), ('"4º lugar · HackaEmb 2026"', STR)],
     [("        RETURN", KW)],
-    [("            ", OP), ("Cargo", VAR), (' & ', OP), ('" @ "', STR), (" & ", OP), ("Empresa", VAR)],
+    [("            ", OP), ("Area", VAR), (' & ', OP), ('" + "', STR), (" & ", OP), ("Extra", VAR)],
     [("EVALUATE", KW)],
     [("    { ", OP), ("[Raywã]", COL), (" }", OP)],
 ]
@@ -308,12 +308,12 @@ def dax():
              f'<rect x="20" y="{ry + 38}" width="{W - 40}" height="26" fill="{C["chrome"]}"/>'
              f'<text x="32" y="{ry + 55}" font-size="12" font-weight="600" fill="{C["text2"]}">[Raywã]</text>'
              f'<rect x="20" y="{ry + 64}" width="{W - 40}" height="30" fill="#232221" stroke="{C["line"]}"/>'
-             f'<text x="32" y="{ry + 84}" font-size="13" fill="{C["text"]}">Análise de Dados e Automação @ Embraer</text>'
+             f'<text x="32" y="{ry + 84}" font-size="13" fill="{C["text"]}">Engenharia &amp; Ciência de Dados + RPA</text>'
              f'<rect x="{W - 46}" y="{ry + 72}" width="2" height="15" fill="{C["yellow"]}" class="caret"/></g>')
     b.append('</g>')
     b.append(f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="10" fill="none" stroke="{C["line"]}"/>')
-    return svg(W, H, "\n".join(b), "Consulta DAX que descreve o perfil: Análise de Dados e Automação na Embraer, "
-                                  "Supply Chain, foco em engenharia e ciência de dados, stack Python, SQL, estatística e Power BI", css=LOOP_CSS)
+    return svg(W, H, "\n".join(b), "Consulta DAX que descreve o perfil: engenharia e ciência de dados, "
+                                  "stack Python, SQL, estatística e Power BI, RPA em SAP e 4º lugar no HackaEmb 2026", css=LOOP_CSS)
 
 
 # ------------------------------------------------------------------ matriz de stack
@@ -386,7 +386,7 @@ def stack():
         y += h
     ly = H - 26
     x = 28
-    for nome, cor in [("Trabalho (Embraer)", CTX["Trabalho"]), ("Projetos pessoais e acadêmicos", CTX["Projetos"]),
+    for nome, cor in [("Trabalho", CTX["Trabalho"]), ("Projetos pessoais e acadêmicos", CTX["Projetos"]),
                       ("Estudo / curso", CTX["Estudo"])]:
         b.append(f'<circle cx="{x + 5}" cy="{ly - 4}" r="5" fill="{cor}"/>'
                  f'<text x="{x + 16}" y="{ly}" font-size="12" fill="{C["muted"]}">{e(nome)}</text>')
@@ -455,9 +455,9 @@ def fluxo_rpa():
 def main():
     files = {"header.svg": header(), "dax.svg": dax(), "stack.svg": stack(), "footer.svg": rodape(),
              "fluxo-rpa.svg": fluxo_rpa()}
-    subs = {"sobre": "quem sou", "stack": "ferramentas", "dados": "engenharia, estatística e ml", "rpa": "robôs e automações",
+    subs = {"sobre": "quem sou", "hackathons": "competições de programação", "stack": "ferramentas", "dados": "engenharia, estatística e ml", "rpa": "robôs e automações",
             "metricas": "github", "contato": "vamos conversar"}
-    titulos = {"sobre": "Sobre mim", "stack": "Stack & competências", "dados": "Engenharia & ciência de dados",
+    titulos = {"sobre": "Sobre mim", "hackathons": "Hackathons & conquistas", "stack": "Stack & competências", "dados": "Engenharia & ciência de dados",
                "rpa": "Automação & RPA", "metricas": "Métricas do GitHub", "contato": "Contato"}
     for i, (slug, nome) in enumerate(PAGES, 1):
         files[f"tabs/{slug}.svg"] = tab(i, nome)

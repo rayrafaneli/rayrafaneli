@@ -35,5 +35,5 @@
   @keyframes shine{0%{transform:translateX(-120%)}60%,100%{transform:translateX(320%)}}
 </style>
 </defs>
-<clipPath id="c"><rect width="164" height="44" rx="8"/></clipPath><rect x=".5" y=".5" width="163" height="43" rx="8" fill="#252423" stroke="#3B3A39"/><text x="18" y="27" font-size="12" font-weight="700" fill="#F2C811" class="mono">03</text><text x="44" y="27.5" font-size="15" font-weight="600" fill="#F3F2F1">Dados &amp; ML</text><rect x="16" y="38" width="132" height="3" rx="1.5" fill="url(#pbi)" class="breath" style="animation-delay:1.2s"/><g clip-path="url(#c)"><rect class="shine" style="animation-delay:1.35s" x="0" y="0" width="57" height="44" fill="url(#glint)"/></g>
+<clipPath id="c"><rect width="164" height="44" rx="8"/></clipPath><rect x=".5" y=".5" width="163" height="43" rx="8" fill="#252423" stroke="#3B3A39"/><text x="18" y="27" font-size="12" font-weight="700" fill="#F2C811" class="mono">04</text><text x="44" y="27.5" font-size="15" font-weight="600" fill="#F3F2F1">Dados &amp; ML</text><rect x="16" y="38" width="132" height="3" rx="1.5" fill="url(#pbi)" class="breath" style="animation-delay:1.6s"/><g clip-path="url(#c)"><rect class="shine" style="animation-delay:1.80s" x="0" y="0" width="57" height="44" fill="url(#glint)"/></g>
 </svg>
