@@ -278,6 +278,83 @@ def ticker():
     return svg(W, H, "\n".join(b), "Stack: " + ", ".join(itens), css=CSS, defs=defs)
 
 
+# ------------------------------------------------------------------ hackathons
+def hackathon_2026():
+    W, H = 1200, 330
+    OURO, PRATA, BRONZE = "#F2C811", "#C9CED6", "#D08A4E"
+    b = [f'<clipPath id="c"><rect width="{W}" height="{H}" rx="12"/></clipPath><g clip-path="url(#c)">',
+         f'<rect width="{W}" height="{H}" fill="{C["page"]}"/>',
+         f'<circle cx="150" cy="165" r="420" fill="url(#glow)" class="breath"/>',
+         f'<rect width="{W}" height="3" fill="url(#pbi)"/>',
+         f'<rect class="sweep" x="0" y="{H - 3}" width="300" height="3" fill="url(#sweepg)"/>']
+    # medalha com raios girando
+    raios = "".join(f'<path d="M150 165 L{150 + 125 * math.cos(math.radians(a - 4)):.1f} {165 + 125 * math.sin(math.radians(a - 4)):.1f} '
+                    f'L{150 + 125 * math.cos(math.radians(a + 4)):.1f} {165 + 125 * math.sin(math.radians(a + 4)):.1f}Z" '
+                    f'fill="{OURO}" opacity=".10"/>' for a in range(0, 360, 20))
+    b.append(f'<g class="spin" style="animation-duration:24s">{raios}</g>')
+    b.append(f'<circle cx="150" cy="165" r="92" fill="none" stroke="{OURO}" stroke-width="2" stroke-dasharray="4 7" class="spinr" '
+             f'style="animation-duration:30s"/>')
+    b.append(f'<g class="pop" style="animation-duration:3.2s"><circle cx="150" cy="165" r="76" fill="url(#medalha)"/>'
+             f'<circle cx="150" cy="165" r="62" fill="#2A2210" stroke="{OURO}" stroke-width="2.5"/>'
+             f'<text x="150" y="186" font-size="62" font-weight="800" fill="{OURO}" text-anchor="middle">4º</text>'
+             f'<text x="150" y="212" font-size="11" font-weight="700" fill="{OURO}" text-anchor="middle" letter-spacing="3">LUGAR</text></g>')
+    for i, (dx, dy) in enumerate([(-70, -80), (78, -64), (-84, 60), (86, 74), (0, -112)]):
+        b.append(f'<circle cx="{150 + dx}" cy="{165 + dy}" r="2.6" fill="{OURO}" class="pulse" style="animation-delay:{i * .4:.1f}s"/>')
+    # texto central
+    x0 = 300
+    b.append(f'<g class="up">{_categoria(x0, 36, "HACKATHON DE IA · 2026", OURO)}</g>')
+    b.append(f'<g class="up" style="animation-delay:.15s">{_titulo(x0, 98, "HackaEmb 2026: 4º lugar entre 14 times", _ajusta("HackaEmb 2026: 4º lugar entre 14 times", 32, 515), OURO)}</g>')
+    b.append(f'<text x="{x0}" y="130" font-size="13.5" fill="{C["text2"]}" class="fade" style="animation-delay:.3s">'
+             f'1 semana · 140 participantes · recorde de 275 inscritos · times de 10 pessoas</text>')
+    b.append(f'<g class="up" style="animation-delay:.45s">'
+             f'<rect x="{x0}" y="152" width="510" height="108" rx="8" fill="{C["chrome"]}" stroke="{C["line"]}"/>'
+             f'<rect x="{x0}" y="152" width="4" height="108" rx="2" fill="{OURO}"/>'
+             f'<text x="{x0 + 20}" y="180" font-size="16" font-weight="800" fill="{C["text"]}">ConformAI'
+             f'<tspan font-size="12.5" font-weight="400" fill="{C["muted"]}">  ·  time PacNine</tspan></text>'
+             f'<text x="{x0 + 20}" y="204" font-size="13" fill="{C["text2"]}">Assistente com IA generativa que guia o registro de</text>'
+             f'<text x="{x0 + 20}" y="222" font-size="13" fill="{C["text2"]}">não conformidades com fotos e gera o anexo no padrão.</text>'
+             f'<text x="{x0 + 20}" y="246" font-size="13" fill="{C["text"]}"><tspan fill="{OURO}" font-weight="700">Meu papel:</tspan>'
+             f' dados e integração da IA com documentos (RAG)</text></g>')
+    x = x0
+    for i, t in enumerate(["IA generativa", "RAG", "Python", "Pitch para banca"]):
+        c, w = _chip(x, 278, t, OURO)
+        b.append(f'<g class="float" style="animation-delay:{i * .5:.1f}s">{c}</g>')
+        x += w + 7
+    # painel de classificação
+    px, py, pw, ph = 842, 30, 330, 270
+    b.append(f'<rect x="{px}" y="{py}" width="{pw}" height="{ph}" rx="10" fill="{C["chrome"]}" stroke="{C["line"]}"/>')
+    b.append(f'<text x="{px + 18}" y="{py + 30}" font-size="14" font-weight="700" fill="{C["text"]}">Classificação final</text>'
+             f'<text x="{px + 18}" y="{py + 48}" font-size="11" fill="{C["muted"]}">14 times · nota da banca</text>')
+    for k in range(14):
+        col, lin = k % 7, k // 7
+        cx, cy = px + 34 + col * 44, py + 84 + lin * 60
+        cor = {0: OURO, 1: PRATA, 2: BRONZE}.get(k, C["line2"])
+        if k == 3:
+            b.append(f'<circle cx="{cx}" cy="{cy}" r="21" fill="none" stroke="{OURO}" stroke-width="2" class="breath"/>'
+                     f'<circle cx="{cx}" cy="{cy}" r="16" fill="{OURO}" class="pop"/>'
+                     f'<text x="{cx}" y="{cy + 5}" font-size="13" font-weight="800" fill="#201F1E" text-anchor="middle">4</text>')
+        else:
+            b.append(f'<g class="fade" style="animation-delay:{.2 + k * .06:.2f}s"><circle cx="{cx}" cy="{cy}" r="15" fill="{cor}" '
+                     f'opacity="{1 if k < 3 else .55}"/><text x="{cx}" y="{cy + 4.5}" font-size="12" font-weight="700" '
+                     f'fill="{"#201F1E" if k < 3 else C["muted"]}" text-anchor="middle">{k + 1}</text></g>')
+    b.append(f'<text x="{px + 166}" y="{py + 117}" font-size="11" fill="{OURO}" text-anchor="middle" font-weight="700">'
+             f'▲ PacNine</text>')
+    gy = py + 206
+    b.append(f'<text x="{px + 18}" y="{gy}" font-size="12" fill="{C["muted"]}">nota do time</text>'
+             f'<text x="{px + pw - 18}" y="{gy}" font-size="20" font-weight="800" fill="{C["text"]}" text-anchor="end">9,29</text>'
+             f'<rect x="{px + 18}" y="{gy + 12}" width="{pw - 36}" height="12" rx="6" fill="{C["card2"]}"/>'
+             f'<rect x="{px + 18}" y="{gy + 12}" width="{(pw - 36) * .929:.1f}" height="12" rx="6" fill="url(#pbi)" class="fill"/>'
+             f'<rect x="{px + 18 + (pw - 36) * .937:.1f}" y="{gy + 6}" width="2.5" height="24" fill="{PRATA}"/>'
+             f'<text x="{px + pw - 18}" y="{gy + 46}" font-size="11" fill="{C["muted"]}" text-anchor="end">'
+             f'pódio a apenas <tspan fill="{OURO}" font-weight="700">0,08</tspan></text>')
+    b.append('</g>')
+    b.append(f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="12" fill="none" stroke="{C["line"]}"/>')
+    defs = _defs(OURO) + (f'<radialGradient id="medalha"><stop offset="0" stop-color="#FFE27A"/>'
+                          f'<stop offset="1" stop-color="#C67A0A"/></radialGradient>')
+    return svg(W, H, "\n".join(b), "HackaEmb 2026: 4º lugar entre 14 times com o ConformAI, nota 9,29, a 0,08 do pódio",
+               css=CSS, defs=defs)
+
+
 PROJETOS = {
     "01-previsao-inflacao": banner(
         1, "CIÊNCIA DE DADOS · ESTATÍSTICA", "Previsão de Inflação: Estatística vs. Machine Learning",
@@ -321,6 +398,7 @@ def main():
         (OUT / "banners" / f"{nome}.svg").write_text(conteudo, encoding="utf-8")
         print("ok", nome)
     (OUT / "ticker.svg").write_text(ticker(), encoding="utf-8")
+    (OUT / "banners" / "hackaemb-2026.svg").write_text(hackathon_2026(), encoding="utf-8")
     print("ok ticker")
 
 
