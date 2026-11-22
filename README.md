@@ -76,9 +76,14 @@ O que eu faço:
 
 <h2 id="hackathons"><img src="./assets/sections/hackathons.svg" width="100%" alt="Página 02 · Hackathons e conquistas" /></h2>
 
-<img src="./assets/banners/hackaemb-2026.svg" width="100%" alt="HackaEmb 2026: 4º lugar entre 14 times com o ConformAI, nota 9,29, a 0,08 do pódio" />
+<img src="./assets/banners/hackaemb-2026.svg" width="100%" alt="HackaEmb 2026: 4º lugar entre 14 times com o ConformAI, time PacNine" />
+<img src="./assets/banners/hackaemb-2026-foto.svg" width="100%" alt="Foto do time PacNine no HackaEmb 2026" />
 
-> Uma semana de maratona com **140 participantes** em times mistos de TI e negócio. Nosso time, o **PacNine**, criou o **ConformAI**, um assistente com IA generativa para o registro de não conformidades; eu cuidei dos **dados e da integração da IA com a base de documentos (RAG)**. Fechamos em **4º lugar entre 14 times**, a 0,08 ponto do pódio.
+> **5 dias, cerca de 140 colaboradores, 14 equipes e um problema real da operação.** Nosso time, o **PacNine**, criou o **ConformAI**: a ferramenta orienta o registro de não conformidades desde o início, com **visão computacional** avaliando as fotos anexadas e a IA sugerindo os campos obrigatórios. Eu cuidei dos **dados e da integração da IA com a base de documentos (RAG)**. Fechamos em **4º lugar entre 14 times**.
+
+<br/>
+
+<img src="./assets/banners/hackaemb-2025.svg" width="100%" alt="HackaEmb 2025, Agentes de IA para Simplificação: primeira participação, time Kai7en" />
 
 <br/>
 
@@ -113,7 +118,7 @@ O que eu faço:
 <a href="https://github.com/rayrafaneli/epidemiological-forecaster"><img src="./assets/banners/03-epidemiological-forecaster.svg" width="100%" alt="Projeto 03 · Epidemiological Forecaster: Dengue Bairro a Bairro" /></a>
 <a href="https://github.com/rayrafaneli/epidemiological-forecaster"><img src="./assets/projects/epidemiological-forecaster.svg" width="100%" alt="Painel do Epidemiological Forecaster alternando entre dashboard de risco por bairro e pressão hospitalar" /></a>
 
-> Features com defasagens de chuva e temperatura, **XGBoost** prevendo casos por semana epidemiológica, **API em FastAPI** sobre **PostgreSQL** e painel com mapa de calor, ranking de bairros e pressão hospitalar.
+> Risco por incidência acumulada em 4 semanas, em 4 níveis. Quatro **XGBoost** (um por semana à frente), com peso maior para as classes raras alto e crítico, validados em 2021 fora da amostra: **F1-Macro acima de 85% e acurácia acima de 95%** na semana seguinte, superando a persistência nos 4 horizontes. Dados em **PostgreSQL**, **API em FastAPI** e painel com mapa de calor, ranking de bairros e pressão hospitalar.
 
 <br/>
 
