@@ -8,8 +8,21 @@ from theme import C, DATA, chip, e, logo, svg, text_w, visual_icons
 
 OUT = Path(__file__).resolve().parent.parent / "assets"
 
-PAGES = [("sobre", "Sobre"), ("stack", "Stack"), ("projetos", "Projetos"),
+PAGES = [("sobre", "Sobre"), ("stack", "Stack"), ("dados", "Dados & BI"), ("rpa", "Automação & RPA"),
          ("metricas", "Métricas"), ("contato", "Contato")]
+
+LOOP_CSS = """
+  .eq{transform-box:fill-box;transform-origin:50% 100%;animation:eq 2.6s ease-in-out infinite alternate;}
+  @keyframes eq{0%{transform:scaleY(1)}35%{transform:scaleY(.55)}70%{transform:scaleY(1.08)}100%{transform:scaleY(.8)}}
+  .breath{animation:breath 3.2s ease-in-out infinite;}
+  @keyframes breath{0%,100%{opacity:.55}50%{opacity:1}}
+  .caret{animation:caret 1s steps(1) infinite;}
+  @keyframes caret{50%{opacity:0}}
+  .float{animation:float 5s ease-in-out infinite;}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+  .shine{transform-box:fill-box;animation:shine 3.6s ease-in-out infinite;}
+  @keyframes shine{0%{transform:translateX(-120%)}60%,100%{transform:translateX(320%)}}
+"""
 
 
 # ------------------------------------------------------------------ cabeçalho
@@ -41,7 +54,8 @@ def header():
         b.append(f'<text x="{x}" y="60" font-size="12.5" fill="{C["text"] if active else C["muted"]}"'
                  f'{" font-weight=" + chr(34) + "600" + chr(34) if active else ""}>{e(name)}</text>')
     b.append(f'<rect x="84" y="67" width="{text_w("Página Inicial", 12.5, True):.0f}" height="3" rx="1.5" fill="{C["yellow"]}"/>')
-    b.append(f'<rect x="1078" y="45" width="104" height="22" rx="4" fill="url(#pbi)"/>'
+    b.append(f'<rect x="1074" y="41" width="112" height="30" rx="7" fill="none" stroke="{C["yellow"]}" stroke-width="1.5" class="breath"/>'
+             f'<rect x="1078" y="45" width="104" height="22" rx="4" fill="url(#pbi)"/>'
              f'<path d="M1093 61v-8m-3.5 3.5L1093 53l3.5 3.5M1088 63h10" stroke="#201F1E" stroke-width="1.5" fill="none" '
              f'stroke-linecap="round" stroke-linejoin="round"/>'
              f'<text x="1106" y="60.5" font-size="12" font-weight="700" fill="#201F1E">Publicar</text>')
@@ -92,10 +106,19 @@ def header():
     b.append(f'<text x="100" y="132" font-size="11" font-weight="700" fill="{C["yellow"]}" letter-spacing="2.5">'
              f'RELATÓRIO DE PERFIL · DESENVOLVIMENTO BI</text>')
     b.append(f'<text x="98" y="184" font-size="48" font-weight="800" fill="{C["text"]}" letter-spacing="-.5" class="up">Raywã Rafaneli</text>')
-    b.append('<clipPath id="type"><rect x="96" y="198" width="0" height="34">'
-             '<animate attributeName="width" from="0" to="540" dur="2.4s" begin=".5s" fill="freeze"/></rect></clipPath>')
-    b.append(f'<text x="100" y="222" font-size="19" fill="{C["text2"]}" clip-path="url(#type)">'
-             f'Desenvolvedor BI · Análise de Dados &amp; Automação</text>')
+    # subtítulo que alterna entre 3 frases (efeito de digitação com SMIL)
+    frases = ["Desenvolvedor BI · Power BI · DAX · SQL", "Análise de Dados &amp; Automação (RPA)",
+              "Engenharia de dados · ETL · Python"]
+    seg, tot = 3.6, 3.6 * len(frases)
+    kt = f"0;{1.0 / tot:.4f};{3.0 / tot:.4f};{3.4 / tot:.4f};1"
+    for i, fr in enumerate(frases):
+        base = 560 if i == 0 else 0
+        b.append(f'<clipPath id="type{i}"><rect x="96" y="198" width="{base}" height="34">'
+                 f'<animate attributeName="width" values="0;560;560;0;0" keyTimes="{kt}" dur="{tot}s" '
+                 f'begin="{i * seg}s" repeatCount="indefinite"/></rect></clipPath>'
+                 f'<g clip-path="url(#type{i})"><text x="100" y="222" font-size="19" fill="{C["text2"]}">{fr}</text>'
+                 f'<rect x="{104 + text_w(fr.replace("&amp;", "&"), 19):.0f}" y="205" width="2.5" height="22" '
+                 f'fill="{C["yellow"]}" class="caret"/></g>')
     b.append(f'<text x="100" y="252" font-size="14" fill="{C["muted"]}" class="fade" style="animation-delay:1.2s">'
              f'<tspan fill="{C["yellow"]}">●</tspan> Embraer · Supply Chain · desde abr/2025</text>')
     x = 100
@@ -121,8 +144,9 @@ def header():
     pts = []
     for i, (lab, h) in enumerate(zip(etapas, hs)):
         bx = vx + 30 + i * 54
-        b.append(f'<rect class="bar" style="animation-delay:{.6 + i * .12:.2f}s" x="{bx}" y="{base - h}" width="32" '
-                 f'height="{h}" rx="2" fill="url(#barg)"/>')
+        b.append(f'<g class="eq" style="animation-delay:{2 + i * .35:.2f}s"><rect class="bar" '
+                 f'style="animation-delay:{.6 + i * .12:.2f}s" x="{bx}" y="{base - h}" width="32" '
+                 f'height="{h}" rx="2" fill="url(#barg)"/></g>')
         b.append(f'<text x="{bx + 16}" y="{base + 16}" font-size="9.5" fill="{C["muted"]}" text-anchor="middle">{lab}</text>')
         pts.append((bx + 16, base - h - 12))
     b.append(f'<polyline class="draw" points="{" ".join(f"{a},{c}" for a, c in pts)}" fill="none" stroke="{DATA[0]}" '
@@ -130,6 +154,10 @@ def header():
     for i, (a, c) in enumerate(pts):
         b.append(f'<circle class="fade" style="animation-delay:{1.6 + i * .2:.2f}s" cx="{a}" cy="{c}" r="3.6" '
                  f'fill="{C["page"]}" stroke="{DATA[0]}" stroke-width="2"/>')
+    trilha = "M" + " L".join(f"{a},{c}" for a, c in pts)
+    b.append(f'<circle r="5" fill="{C["yellow"]}" opacity="0"><animateMotion dur="3.2s" begin="2.8s" '
+             f'repeatCount="indefinite" path="{trilha}"/><animate attributeName="opacity" values="0;1;1;0" '
+             f'keyTimes="0;.1;.85;1" dur="3.2s" begin="2.8s" repeatCount="indefinite"/></circle>')
 
     # cartões de KPI
     cards = [("Embraer", "Dados &amp; Automação", "Supply Chain · desde 2025", C["yellow"]),
@@ -144,20 +172,42 @@ def header():
                  f'<text x="{cx + 20}" y="392" font-size="36" font-weight="800" fill="{C["text"]}">{big}</text>'
                  f'<text x="{cx + 20}" y="426" font-size="13" font-weight="600" fill="{C["text2"]}">{l1}</text>'
                  f'<text x="{cx + 20}" y="448" font-size="11.5" fill="{C["muted"]}">{l2}</text></g>')
+    # brilho que passa pelos cartões
+    clip = "".join(f'<rect x="{100 + i * 216}" y="330" width="198" height="150" rx="6"/>' for i in range(4))
+    b.append(f'<defs><clipPath id="cardsclip">{clip}</clipPath><linearGradient id="glint" x1="0" x2="1">'
+             f'<stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".08"/>'
+             f'<stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>'
+             f'<g clip-path="url(#cardsclip)"><rect class="shine" style="animation-delay:2.5s" x="100" y="330" width="260" '
+             f'height="150" fill="url(#glint)"/></g>')
 
-    # barra inferior: abas de página + zoom
+    # barra inferior: abas de página que avançam sozinhas + zoom
     b.append(f'<rect y="520" width="{W}" height="40" fill="{C["chrome"]}"/><rect y="520" width="{W}" height="1" fill="{C["line"]}"/>')
+    n, passo = len(PAGES), 2.6
+    dur = n * passo
+    kts = ";".join(f"{k / n:.4f}" for k in range(n))
+    xs, ws = [], []
     x = 60
-    for i, (_, nome) in enumerate(PAGES):
+    for _, nome in PAGES:
         w = text_w(nome, 12.5, True) + 30
-        if i == 0:
-            b.append(f'<rect x="{x}" y="525" width="{w:.0f}" height="30" rx="4" fill="{C["card2"]}"/>'
-                     f'<rect x="{x + 10}" y="551" width="{w - 20:.0f}" height="2.5" rx="1.2" fill="{C["yellow"]}"/>')
-        b.append(f'<text x="{x + w / 2:.0f}" y="545" font-size="12.5" text-anchor="middle" '
-                 f'fill="{C["text"] if i == 0 else C["muted"]}"{" font-weight=" + chr(34) + "600" + chr(34) if i == 0 else ""}>{e(nome)}</text>')
+        xs.append(x)
+        ws.append(w)
         x += w + 6
+    b.append(f'<rect x="{xs[0]}" y="525" width="{ws[0]:.0f}" height="30" rx="4" fill="{C["card2"]}">'
+             f'<animate attributeName="x" values="{";".join(f"{v:.0f}" for v in xs)}" keyTimes="{kts}" calcMode="discrete" dur="{dur}s" repeatCount="indefinite"/>'
+             f'<animate attributeName="width" values="{";".join(f"{v:.0f}" for v in ws)}" keyTimes="{kts}" calcMode="discrete" dur="{dur}s" repeatCount="indefinite"/></rect>')
+    b.append(f'<rect x="{xs[0] + 10}" y="551" width="{ws[0] - 20:.0f}" height="2.5" rx="1.2" fill="{C["yellow"]}">'
+             f'<animate attributeName="x" values="{";".join(f"{v + 10:.0f}" for v in xs)}" keyTimes="{kts}" calcMode="discrete" dur="{dur}s" repeatCount="indefinite"/>'
+             f'<animate attributeName="width" values="{";".join(f"{v - 20:.0f}" for v in ws)}" keyTimes="{kts}" calcMode="discrete" dur="{dur}s" repeatCount="indefinite"/></rect>')
+    for i, (_, nome) in enumerate(PAGES):
+        vis = ";".join("1" if k == i else "0" for k in range(n))
+        b.append(f'<text x="{xs[i] + ws[i] / 2:.0f}" y="545" font-size="12.5" text-anchor="middle" fill="{C["muted"]}">{e(nome)}</text>'
+                 f'<text x="{xs[i] + ws[i] / 2:.0f}" y="545" font-size="12.5" text-anchor="middle" fill="{C["text"]}" '
+                 f'font-weight="600" opacity="{1 if i == 0 else 0}"><animate attributeName="opacity" values="{vis}" '
+                 f'keyTimes="{kts}" calcMode="discrete" dur="{dur}s" repeatCount="indefinite"/>{e(nome)}</text>'
+                 f'<text x="880" y="545" font-size="11.5" fill="{C["muted"]}" opacity="{1 if i == 0 else 0}">'
+                 f'<animate attributeName="opacity" values="{vis}" keyTimes="{kts}" calcMode="discrete" dur="{dur}s" '
+                 f'repeatCount="indefinite"/>Página {i + 1} de {n}</text>')
     b.append(f'<text x="{x + 8:.0f}" y="546" font-size="17" fill="{C["muted"]}">+</text>')
-    b.append(f'<text x="880" y="545" font-size="11.5" fill="{C["muted"]}">Página 1 de {len(PAGES)}</text>')
     b.append(f'<path d="M990 540h8" stroke="{C["muted"]}" stroke-width="1.4"/>'
              f'<rect x="1008" y="539" width="100" height="2" rx="1" fill="{C["line2"]}"/>'
              f'<circle cx="1058" cy="540" r="5" fill="{C["text"]}"/>'
@@ -166,17 +216,23 @@ def header():
     b.append('</g>')
     b.append(f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="12" fill="none" stroke="{C["line"]}"/>')
     return svg(W, H, "\n".join(b), "Relatório de perfil no estilo Power BI: Raywã Rafaneli, Desenvolvedor BI, "
-                                  "Análise de Dados e Automação na Embraer")
+                                  "Análise de Dados e Automação na Embraer", css=LOOP_CSS)
 
 
 # ------------------------------------------------------------------ abas (navegação)
 def tab(num, nome):
     w = int(text_w(nome, 15, True) + 74)
-    b = (f'<rect x=".5" y=".5" width="{w - 1}" height="43" rx="8" fill="{C["chrome"]}" stroke="{C["line"]}"/>'
+    b = (f'<clipPath id="c"><rect width="{w}" height="44" rx="8"/></clipPath>'
+         f'<rect x=".5" y=".5" width="{w - 1}" height="43" rx="8" fill="{C["chrome"]}" stroke="{C["line"]}"/>'
          f'<text x="18" y="27" font-size="12" font-weight="700" fill="{C["yellow"]}" class="mono">{num:02d}</text>'
          f'<text x="44" y="27.5" font-size="15" font-weight="600" fill="{C["text"]}">{e(nome)}</text>'
-         f'<rect x="16" y="38" width="{w - 32}" height="3" rx="1.5" fill="url(#pbi)"/>')
-    return svg(w, 44, b, nome)
+         f'<rect x="16" y="38" width="{w - 32}" height="3" rx="1.5" fill="url(#pbi)" class="breath" '
+         f'style="animation-delay:{num * .4:.1f}s"/>'
+         f'<g clip-path="url(#c)"><rect class="shine" style="animation-delay:{num * .45:.2f}s" x="0" y="0" width="{w * .35:.0f}" '
+         f'height="44" fill="url(#glint)"/></g>')
+    defs = ('<linearGradient id="glint" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/>'
+            '<stop offset=".5" stop-color="#fff" stop-opacity=".09"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>')
+    return svg(w, 44, b, nome, css=LOOP_CSS, defs=defs)
 
 
 # ------------------------------------------------------------------ cabeçalhos de seção
@@ -192,15 +248,17 @@ def section(num, titulo, sub):
     # mini visual decorativo à direita
     hs = [14, 24, 18, 32, 26, 40]
     for i, h in enumerate(hs):
-        b.append(f'<rect class="bar" style="animation-delay:{.2 + i * .1:.1f}s" x="{1010 + i * 14}" y="{70 - h}" width="9" '
-                 f'height="{h}" rx="1.5" fill="url(#barg)" opacity="{.45 + i * .11:.2f}"/>')
+        b.append(f'<g class="eq" style="animation-delay:{1.2 + i * .23:.2f}s"><rect class="bar" style="animation-delay:{.2 + i * .1:.1f}s" '
+                 f'x="{1000 + i * 14}" y="{70 - h}" width="9" height="{h}" rx="1.5" fill="url(#barg)" opacity="{.45 + i * .11:.2f}"/></g>')
+    b.append(f'<path d="M1000 74H1083" stroke="{C["line2"]}"/>')
     b.append(visual_icons(1100, 32))
+    b.append(f'<circle cx="{W - 22}" cy="{H - 20}" r="3.5" fill="#1AAB40" class="pulse"/>')
     b.append('</g>')
     b.append(f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="10" fill="none" stroke="{C["line"]}"/>')
     defs = (f'<linearGradient id="shine" x1="0" x2="1"><stop offset="0" stop-color="{C["yellow"]}" stop-opacity="0"/>'
             f'<stop offset=".5" stop-color="{C["yellow"]}"/><stop offset="1" stop-color="{C["yellow"]}" stop-opacity="0"/>'
             f'</linearGradient>')
-    return svg(W, H, "\n".join(b), f"Página {num} · {titulo}", defs=defs)
+    return svg(W, H, "\n".join(b), f"Página {num} · {titulo}", defs=defs, css=LOOP_CSS)
 
 
 # ------------------------------------------------------------------ editor DAX
@@ -251,31 +309,47 @@ def dax():
              f'<text x="32" y="{ry + 55}" font-size="12" font-weight="600" fill="{C["text2"]}">[Raywã]</text>'
              f'<rect x="20" y="{ry + 64}" width="{W - 40}" height="30" fill="#232221" stroke="{C["line"]}"/>'
              f'<text x="32" y="{ry + 84}" font-size="13" fill="{C["text"]}">Análise de Dados e Automação @ Embraer</text>'
-             f'<rect x="{W - 46}" y="{ry + 72}" width="2" height="15" fill="{C["yellow"]}" class="pulse"/></g>')
+             f'<rect x="{W - 46}" y="{ry + 72}" width="2" height="15" fill="{C["yellow"]}" class="caret"/></g>')
     b.append('</g>')
     b.append(f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="10" fill="none" stroke="{C["line"]}"/>')
     return svg(W, H, "\n".join(b), "Consulta DAX que descreve o perfil: Análise de Dados e Automação na Embraer, "
-                                  "Supply Chain, foco em Business Intelligence, stack Power BI, DAX, SQL e Python")
+                                  "Supply Chain, foco em Business Intelligence, stack Power BI, DAX, SQL e Python", css=LOOP_CSS)
 
 
 # ------------------------------------------------------------------ matriz de stack
 CTX = {"Trabalho": "#1AAB40", "Projetos": DATA[0], "Estudo": C["yellow"]}
 STACK = [
-    ("BI & Visualização", ["Power BI", "DAX", "Power Query (M)", "Metabase"], ["Trabalho"]),
-    ("Dados & ETL", ["SQL", "Oracle", "Pentaho PDI", "Pandas", "Modelagem de dados"], ["Trabalho"]),
-    ("Automação (RPA)", ["Python", "VBA", "SAP GUI Scripting", "SMTP"], ["Trabalho"]),
-    ("Desenvolvimento", ["ASP.NET", "VB.NET", "FastAPI", "Streamlit", "APIs REST"], ["Trabalho", "Projetos"]),
-    ("Cloud & DevOps", ["Docker", "AWS", "Git", "GitHub Actions", "SQLite"], ["Projetos"]),
-    ("IA & Machine Learning", ["XGBoost", "Visão computacional", "LLMs"], ["Projetos"]),
-    ("Governança", ["Governança de dados", "LGPD", "Lean"], ["Trabalho", "Estudo"]),
-    ("Estudando agora", ["SQL Server", "Azure SQL", "Apache Spark"], ["Estudo"]),
+    ("BI & Visualização", ["Power BI", "DAX", "Power Query (M)", "Metabase", "Plotly", "Matplotlib", "Seaborn", "Streamlit"],
+     ["Trabalho", "Projetos"]),
+    ("Dados & ETL", ["SQL", "Pandas", "NumPy", "Pentaho PDI", "Modelagem dimensional", "APIs de dados", "Qualidade de dados"],
+     ["Trabalho", "Projetos"]),
+    ("Bancos de dados", ["Oracle", "SQL Server", "DuckDB", "SQLite", "Supabase (Postgres)"], ["Trabalho", "Projetos"]),
+    ("Automação & RPA", ["Python", "VBA", "SAP GUI Scripting", "Playwright", "Excel (openpyxl)", "SMTP", "Android (Java)"],
+     ["Trabalho", "Projetos"]),
+    ("Bots & integrações", ["Telegram Bot API", "Telethon", "WhatsApp", "YouTube Data API", "APIs REST"], ["Projetos"]),
+    ("Linguagens", ["Python", "SQL", "Java", "C#", "VB.NET", "VBA", "HTML/CSS"], ["Trabalho", "Projetos"]),
+    ("Desenvolvimento", ["ASP.NET", "FastAPI", "Java (sockets, Maven)", "Testes com pytest"], ["Trabalho", "Projetos"]),
+    ("Cloud & DevOps", ["Docker", "AWS", "Git", "GitHub Actions", "CI/CD"], ["Projetos"]),
+    ("IA & Machine Learning", ["XGBoost", "Scikit-learn", "Visão computacional", "LLMs", "Jupyter"], ["Projetos"]),
+    ("Governança & processos", ["Governança de dados", "LGPD", "Lean", "Supply Chain"], ["Trabalho"]),
+    ("Estudando agora", ["Azure SQL", "Apache Spark"], ["Estudo"]),
 ]
 
 
 def stack():
     W = 1200
-    top, rh = 112, 50
-    H = top + len(STACK) * rh + 62
+    x0, xmax, top, lh = 300, 935, 112, 36
+    linhas = []  # (área, [(x, y_rel, nome)], ctx, altura)
+    for area, tools, ctx in STACK:
+        x, yrel, itens = x0, 0, []
+        for t in tools:
+            w = text_w(t, 12.5) + 26
+            if x + w > xmax:
+                x, yrel = x0, yrel + lh
+            itens.append((x, yrel, t))
+            x += w + 8
+        linhas.append((area, itens, ctx, yrel + 50))
+    H = top + sum(h for *_, h in linhas) + 62
     b = [f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="10" fill="{C["page"]}" stroke="{C["line"]}"/>',
          f'<text x="28" y="40" font-size="16" font-weight="700" fill="{C["text"]}">Matriz de competências</text>',
          f'<text x="28" y="60" font-size="12" fill="{C["muted"]}">Ferramentas por área e onde eu uso cada uma</text>',
@@ -284,25 +358,28 @@ def stack():
          f'<text x="300" y="98" font-size="12.5" font-weight="700" fill="{C["text2"]}">Ferramentas</text>',
          f'<text x="964" y="98" font-size="12.5" font-weight="700" fill="{C["text2"]}">Onde uso</text>',
          f'<rect x="20" y="{top - 1}" width="{W - 40}" height="1.5" fill="{C["yellow"]}" opacity=".8"/>']
-    for i, (area, tools, ctx) in enumerate(STACK):
-        y = top + i * rh
-        g = ['<g>']
+    y = top
+    k = 0
+    cores = DATA + [C["yellow"], "#1AAB40", "#13BFCF"]
+    for i, (area, itens, ctx, h) in enumerate(linhas):
+        g = [f'<g class="up" style="animation-delay:{.15 + i * .09:.2f}s">']
         if i % 2:
-            g.append(f'<rect x="20" y="{y + .5}" width="{W - 40}" height="{rh}" fill="#232221"/>')
-        g.append(f'<rect x="32" y="{y + 20}" width="10" height="10" rx="2" fill="{(DATA + [C["yellow"]])[i % 9]}"/>'
+            g.append(f'<rect x="20" y="{y + .5}" width="{W - 40}" height="{h}" fill="#232221"/>')
+        g.append(f'<rect x="32" y="{y + 20}" width="10" height="10" rx="2" fill="{cores[i % len(cores)]}"/>'
                  f'<text x="52" y="{y + 30}" font-size="14" font-weight="600" fill="{C["text"]}">{e(area)}</text>')
-        x = 300
-        for t in tools:
-            c, w = chip(x, y + 12, t, size=12.5)
-            g.append(c)
-            x += w + 8
+        for x, yrel, t in itens:
+            c, _ = chip(x, y + 12 + yrel, t, size=12.5)
+            g.append(f'<g class="float" style="animation-delay:{(k * .37) % 5:.2f}s">{c}</g>')
+            k += 1
         x = 964
         for c in ctx:
-            g.append(f'<circle cx="{x + 6}" cy="{y + 25}" r="6" fill="{CTX[c]}"/>'
+            g.append(f'<circle cx="{x + 6}" cy="{y + 25}" r="6" fill="{CTX[c]}" class="breath" '
+                     f'style="animation-delay:{i * .3:.1f}s"/>'
                      f'<text x="{x + 18}" y="{y + 29.5}" font-size="12.5" fill="{C["text2"]}">{c}</text>')
             x += text_w(c, 12.5) + 36
-        g.append(f'<rect x="20" y="{y + rh}" width="{W - 40}" height="1" fill="{C["line"]}" opacity=".6"/></g>')
+        g.append(f'<rect x="20" y="{y + h}" width="{W - 40}" height="1" fill="{C["line"]}" opacity=".6"/></g>')
         b.append("".join(g))
+        y += h
     ly = H - 26
     x = 28
     for nome, cor in [("Trabalho (Embraer)", CTX["Trabalho"]), ("Projetos pessoais e acadêmicos", CTX["Projetos"]),
@@ -311,83 +388,38 @@ def stack():
                  f'<text x="{x + 16}" y="{ly}" font-size="12" fill="{C["muted"]}">{e(nome)}</text>')
         x += text_w(nome, 12) + 44
     return svg(W, H, "\n".join(b), "Matriz de competências: " + "; ".join(
-        f"{a}: {', '.join(t)}" for a, t, _ in STACK))
-
-
-# ------------------------------------------------------------------ dashboard confidencial
-def confidencial():
-    W, H = 1200, 540
-    b = [f'<clipPath id="c"><rect width="{W}" height="{H}" rx="12"/></clipPath><g clip-path="url(#c)">',
-         f'<rect width="{W}" height="{H}" fill="{C["bg"]}"/>',
-         f'<rect width="{W}" height="40" fill="{C["chrome"]}"/>', logo(18, 13),
-         f'<text x="48" y="26" font-size="13" font-weight="600" fill="{C["text"]}">painel-corporativo.pbix'
-         f'<tspan fill="{C["muted"]}" font-weight="400"> — Supply Chain · Embraer</tspan></text>',
-         f'<rect x="1046" y="10" width="138" height="21" rx="10.5" fill="#3A1E1E" stroke="#D64550"/>'
-         f'<text x="1115" y="25" font-size="11" font-weight="700" fill="#F28B8B" text-anchor="middle" letter-spacing="1">CONFIDENCIAL</text>',
-         '<g filter="url(#blur)">']
-    # esqueleto do dashboard
-    for i in range(4):
-        x = 28 + i * 290
-        b.append(f'<rect x="{x}" y="62" width="274" height="96" rx="6" fill="{C["chrome"]}"/>'
-                 f'<rect x="{x + 18}" y="84" width="110" height="10" rx="5" fill="#3E3C3A"/>'
-                 f'<rect x="{x + 18}" y="106" width="{150 - i * 18}" height="26" rx="6" fill="{[C["yellow"], DATA[0], DATA[1], DATA[2]][i]}" opacity=".55"/>')
-    b.append(f'<rect x="28" y="176" width="710" height="336" rx="6" fill="{C["chrome"]}"/>')
-    hs = [120, 180, 150, 210, 170, 240, 200, 260, 190, 230, 280, 250]
-    for i, h in enumerate(hs):
-        b.append(f'<rect x="{60 + i * 56}" y="{488 - h}" width="34" height="{h}" rx="3" fill="url(#barg)" opacity=".7"/>')
-    b.append(f'<polyline points="{" ".join(f"{77 + i * 56},{470 - h * .9:.0f}" for i, h in enumerate(hs))}" '
-             f'fill="none" stroke="{DATA[0]}" stroke-width="4"/>')
-    b.append(f'<rect x="756" y="176" width="416" height="336" rx="6" fill="{C["chrome"]}"/>')
-    for i in range(8):
-        y = 206 + i * 36
-        b.append(f'<rect x="776" y="{y}" width="120" height="12" rx="6" fill="#3E3C3A"/>'
-                 f'<rect x="916" y="{y}" width="{70 + (i * 37) % 160}" height="12" rx="6" fill="{DATA[i % 4]}" opacity=".6"/>')
-    b.append('</g>')
-    # aviso
-    b.append(f'<rect class="sweep" x="0" y="0" width="240" height="{H}" fill="url(#shine)" opacity=".06"/>')
-    b.append(f'<g class="up" style="animation-delay:.3s">'
-             f'<rect x="330" y="186" width="540" height="190" rx="12" fill="{C["bg"]}" fill-opacity=".93" stroke="{C["yellow"]}" stroke-opacity=".55"/>'
-             f'<rect x="586" y="226" width="28" height="22" rx="4" fill="url(#pbi)"/>'
-             f'<path d="M591 226v-6a9 9 0 0 1 18 0v6" fill="none" stroke="{C["yellow"]}" stroke-width="3.2"/>'
-             f'<circle cx="600" cy="236" r="3" fill="#201F1E"/>'
-             f'<text x="600" y="286" font-size="24" font-weight="800" fill="{C["text"]}" text-anchor="middle">Conteúdo confidencial</text>'
-             f'<text x="600" y="316" font-size="14.5" fill="{C["text2"]}" text-anchor="middle">'
-             f'Dashboards de Supply Chain em Power BI e Metabase</text>'
-             f'<text x="600" y="344" font-size="13" fill="{C["muted"]}" text-anchor="middle">'
-             f'Telas e dados ficam fora do GitHub por compliance.</text></g>')
-    b.append('</g>')
-    b.append(f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="12" fill="none" stroke="{C["line"]}"/>')
-    defs = ('<filter id="blur" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="5"/></filter>'
-            f'<linearGradient id="shine" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/>'
-            f'<stop offset=".5" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>')
-    return svg(W, H, "\n".join(b), "Dashboard corporativo de Supply Chain desfocado, com o aviso: conteúdo confidencial",
-               defs=defs)
+        f"{a}: {', '.join(t)}" for a, t, _ in STACK), css=LOOP_CSS)
 
 
 # ------------------------------------------------------------------ rodapé
 def rodape():
     W, H = 1200, 64
-    b = [f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="10" fill="{C["chrome"]}" stroke="{C["line"]}"/>',
-         logo(22, 23),
+    b = [f'<clipPath id="c"><rect width="{W}" height="{H}" rx="10"/></clipPath>',
+         f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="10" fill="{C["chrome"]}" stroke="{C["line"]}"/>',
+         f'<g clip-path="url(#c)"><rect class="sweep" x="0" y="{H - 3}" width="300" height="3" fill="url(#shine)"/></g>',
+         f'<g class="float">{logo(22, 23)}</g>',
          f'<text x="54" y="38" font-size="15" font-weight="700" fill="{C["text"]}">Obrigado pela visita!</text>',
          f'<text x="600" y="37" font-size="12" fill="{C["muted"]}" text-anchor="middle">'
          f'Página {len(PAGES)} de {len(PAGES)} · relatório de perfil · rayrafaneli</text>',
-         f'<circle cx="930" cy="32" r="4.5" fill="#1AAB40" class="pulse"/>'
-         f'<text x="942" y="37" font-size="12" fill="{C["muted"]}">dados atualizados</text>',
-         f'<path d="M1062 32h8" stroke="{C["muted"]}" stroke-width="1.4"/>'
-         f'<rect x="1078" y="31" width="64" height="2" rx="1" fill="{C["line2"]}"/>'
-         f'<circle cx="1110" cy="32" r="5" fill="{C["text"]}"/>'
-         f'<path d="M1150 32h8M1154 28v8" stroke="{C["muted"]}" stroke-width="1.4"/>']
-    return svg(W, H, "\n".join(b), "Obrigado pela visita!")
+         f'<circle cx="910" cy="32" r="4.5" fill="#1AAB40" class="pulse"/>'
+         f'<text x="922" y="37" font-size="12" fill="{C["muted"]}">dados atualizados todo dia</text>',
+         f'<path d="M1080 32h8" stroke="{C["muted"]}" stroke-width="1.4"/>'
+         f'<rect x="1096" y="31" width="52" height="2" rx="1" fill="{C["line2"]}"/>'
+         f'<circle cx="1122" cy="32" r="5" fill="{C["text"]}">'
+         f'<animate attributeName="cx" values="1104;1140;1104" dur="6s" repeatCount="indefinite"/></circle>'
+         f'<path d="M1158 32h8M1162 28v8" stroke="{C["muted"]}" stroke-width="1.4"/>']
+    defs = (f'<linearGradient id="shine" x1="0" x2="1"><stop offset="0" stop-color="{C["yellow"]}" stop-opacity="0"/>'
+            f'<stop offset=".5" stop-color="{C["yellow"]}"/><stop offset="1" stop-color="{C["yellow"]}" stop-opacity="0"/>'
+            f'</linearGradient>')
+    return svg(W, H, "\n".join(b), "Obrigado pela visita!", css=LOOP_CSS, defs=defs)
 
 
 def main():
-    files = {"header.svg": header(), "dax.svg": dax(), "stack.svg": stack(),
-             "confidencial.svg": confidencial(), "footer.svg": rodape()}
-    subs = {"sobre": "quem sou", "stack": "ferramentas", "projetos": "portfólio",
+    files = {"header.svg": header(), "dax.svg": dax(), "stack.svg": stack(), "footer.svg": rodape()}
+    subs = {"sobre": "quem sou", "stack": "ferramentas", "dados": "projetos de dados", "rpa": "robôs e automações",
             "metricas": "github", "contato": "vamos conversar"}
-    titulos = {"sobre": "Sobre mim", "stack": "Stack & competências", "projetos": "Projetos em destaque",
-               "metricas": "Métricas do GitHub", "contato": "Contato"}
+    titulos = {"sobre": "Sobre mim", "stack": "Stack & competências", "dados": "Projetos de dados & BI",
+               "rpa": "Automação & RPA", "metricas": "Métricas do GitHub", "contato": "Contato"}
     for i, (slug, nome) in enumerate(PAGES, 1):
         files[f"tabs/{slug}.svg"] = tab(i, nome)
         files[f"sections/{slug}.svg"] = section(i, titulos[slug], subs[slug])

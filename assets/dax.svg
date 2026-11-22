@@ -22,6 +22,17 @@
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
   .sweep{animation:sweep 4.5s ease-in-out infinite;}
   @keyframes sweep{0%{transform:translateX(-300px)}100%{transform:translateX(1500px)}}
+
+  .eq{transform-box:fill-box;transform-origin:50% 100%;animation:eq 2.6s ease-in-out infinite alternate;}
+  @keyframes eq{0%{transform:scaleY(1)}35%{transform:scaleY(.55)}70%{transform:scaleY(1.08)}100%{transform:scaleY(.8)}}
+  .breath{animation:breath 3.2s ease-in-out infinite;}
+  @keyframes breath{0%,100%{opacity:.55}50%{opacity:1}}
+  .caret{animation:caret 1s steps(1) infinite;}
+  @keyframes caret{50%{opacity:0}}
+  .float{animation:float 5s ease-in-out infinite;}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+  .shine{transform-box:fill-box;animation:shine 3.6s ease-in-out infinite;}
+  @keyframes shine{0%{transform:translateX(-120%)}60%,100%{transform:translateX(320%)}}
 </style>
 </defs>
 <clipPath id="c"><rect width="600" height="420" rx="10"/></clipPath><g clip-path="url(#c)">
@@ -43,7 +54,7 @@
 <g class="fade" style="animation-delay:1.74s"><text x="38" y="259" font-size="12.5" fill="#6E7681" text-anchor="end" class="mono">10</text><text x="54" y="259" font-size="13" class="mono" xml:space="preserve"><tspan fill="#D4D4D4">            </tspan><tspan fill="#DCDCAA">Cargo</tspan><tspan fill="#D4D4D4"> &amp; </tspan><tspan fill="#CE9178">&quot; @ &quot;</tspan><tspan fill="#D4D4D4"> &amp; </tspan><tspan fill="#DCDCAA">Empresa</tspan></text></g>
 <g class="fade" style="animation-delay:1.90s"><text x="38" y="280" font-size="12.5" fill="#6E7681" text-anchor="end" class="mono">11</text><text x="54" y="280" font-size="13" class="mono" xml:space="preserve"><tspan fill="#569CD6">EVALUATE</tspan></text></g>
 <g class="fade" style="animation-delay:2.06s"><text x="38" y="301" font-size="12.5" fill="#6E7681" text-anchor="end" class="mono">12</text><text x="54" y="301" font-size="13" class="mono" xml:space="preserve"><tspan fill="#D4D4D4">    { </tspan><tspan fill="#9CDCFE">[Raywã]</tspan><tspan fill="#D4D4D4"> }</tspan></text></g>
-<g class="up" style="animation-delay:2.52s"><rect x="0" y="326" width="600" height="1" fill="#3B3A39"/><text x="20" y="352" font-size="12" font-weight="700" fill="#F3F2F1">Resultados</text><text x="96" y="352" font-size="11" fill="#A19F9D">1 linha · 0,08 s</text><rect x="20" y="364" width="560" height="26" fill="#252423"/><text x="32" y="381" font-size="12" font-weight="600" fill="#D2D0CE">[Raywã]</text><rect x="20" y="390" width="560" height="30" fill="#232221" stroke="#3B3A39"/><text x="32" y="410" font-size="13" fill="#F3F2F1">Análise de Dados e Automação @ Embraer</text><rect x="554" y="398" width="2" height="15" fill="#F2C811" class="pulse"/></g>
+<g class="up" style="animation-delay:2.52s"><rect x="0" y="326" width="600" height="1" fill="#3B3A39"/><text x="20" y="352" font-size="12" font-weight="700" fill="#F3F2F1">Resultados</text><text x="96" y="352" font-size="11" fill="#A19F9D">1 linha · 0,08 s</text><rect x="20" y="364" width="560" height="26" fill="#252423"/><text x="32" y="381" font-size="12" font-weight="600" fill="#D2D0CE">[Raywã]</text><rect x="20" y="390" width="560" height="30" fill="#232221" stroke="#3B3A39"/><text x="32" y="410" font-size="13" fill="#F3F2F1">Análise de Dados e Automação @ Embraer</text><rect x="554" y="398" width="2" height="15" fill="#F2C811" class="caret"/></g>
 </g>
 <rect x=".5" y=".5" width="599" height="419" rx="10" fill="none" stroke="#3B3A39"/>
 </svg>

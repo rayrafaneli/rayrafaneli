@@ -6,7 +6,7 @@
   </linearGradient>
   <linearGradient id="barg" x1="0" y1="0" x2="0" y2="1">
     <stop offset="0" stop-color="#F2C811"/><stop offset="1" stop-color="#C67A0A"/>
-  </linearGradient>
+  </linearGradient><linearGradient id="glint" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".09"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
 <style>
   text{font-family:'Segoe UI','Segoe UI Variable',system-ui,-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;}
   .mono{font-family:'Cascadia Code','Cascadia Mono',Consolas,'SFMono-Regular',Menlo,monospace;}
@@ -22,7 +22,18 @@
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
   .sweep{animation:sweep 4.5s ease-in-out infinite;}
   @keyframes sweep{0%{transform:translateX(-300px)}100%{transform:translateX(1500px)}}
+
+  .eq{transform-box:fill-box;transform-origin:50% 100%;animation:eq 2.6s ease-in-out infinite alternate;}
+  @keyframes eq{0%{transform:scaleY(1)}35%{transform:scaleY(.55)}70%{transform:scaleY(1.08)}100%{transform:scaleY(.8)}}
+  .breath{animation:breath 3.2s ease-in-out infinite;}
+  @keyframes breath{0%,100%{opacity:.55}50%{opacity:1}}
+  .caret{animation:caret 1s steps(1) infinite;}
+  @keyframes caret{50%{opacity:0}}
+  .float{animation:float 5s ease-in-out infinite;}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+  .shine{transform-box:fill-box;animation:shine 3.6s ease-in-out infinite;}
+  @keyframes shine{0%{transform:translateX(-120%)}60%,100%{transform:translateX(320%)}}
 </style>
 </defs>
-<rect x=".5" y=".5" width="138" height="43" rx="8" fill="#252423" stroke="#3B3A39"/><text x="18" y="27" font-size="12" font-weight="700" fill="#F2C811" class="mono">04</text><text x="44" y="27.5" font-size="15" font-weight="600" fill="#F3F2F1">Métricas</text><rect x="16" y="38" width="107" height="3" rx="1.5" fill="url(#pbi)"/>
+<clipPath id="c"><rect width="139" height="44" rx="8"/></clipPath><rect x=".5" y=".5" width="138" height="43" rx="8" fill="#252423" stroke="#3B3A39"/><text x="18" y="27" font-size="12" font-weight="700" fill="#F2C811" class="mono">05</text><text x="44" y="27.5" font-size="15" font-weight="600" fill="#F3F2F1">Métricas</text><rect x="16" y="38" width="107" height="3" rx="1.5" fill="url(#pbi)" class="breath" style="animation-delay:2.0s"/><g clip-path="url(#c)"><rect class="shine" style="animation-delay:2.25s" x="0" y="0" width="49" height="44" fill="url(#glint)"/></g>
 </svg>
